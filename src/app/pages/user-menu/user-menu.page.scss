@@ -1,0 +1,80 @@
+.ion-text-center p {
+  font-size: 14px;
+}
+
+p > .name {
+  font-family: 'Poppins SemiBold';
+  font-weight: 600;
+}
+
+#profile-pic {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  background: #21C1C1;
+}
+
+#profile-pic img {
+  width: 110px;
+  height: auto;
+  border-radius: 50%;
+}
+
+#profile-pic p {
+  color: #ffffff;
+}
+
+#profile-pic .name {
+  font-family: 'Poppins Medium';
+}
+
+#profile-pic .email {
+  font-family: 'Poppins Light';
+}
+
+.item {
+  font-size: 12px;
+  font-family: 'Poppins SemiBold';
+}
+
+ion-icon {
+  width: 60px;
+}
+
+.item.sc-ion-label-md-h,
+.item .sc-ion-label-md-h {
+  font-size: 13px !important;
+  font-family: 'Poppins SemiBold';
+}
+
+ion-item {
+  height: 40px;
+}
+
+ion-item img {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.profile-center {
+  background: #21C1C1;
+  ;
+}
+
+.img-center {
+  border-radius: 12px;
+}
+
+.white-text {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: 'Poppins Regular';
+}
+
+.sub-list {
+  font-size: 13px;
+  display: inline-block;
+  margin-left: 45px;
+  position: relative;
+  margin-top: 10px !important;
+  font-family: 'Poppins Regular';
+}

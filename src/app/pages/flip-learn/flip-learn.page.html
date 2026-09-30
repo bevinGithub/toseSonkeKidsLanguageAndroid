@@ -1,0 +1,108 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+ 
+    <ion-title class="ion-text-center title-text" [innerHTML]="unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tapLearn ion-text-center">
+    <h5 color="secondary">Flip & Learn</h5>
+  </div>
+
+  <ng-container *ngIf="connection">
+    <div class="tapList ion-padding" *ngIf="questions !== 'empty'">
+     <ng-container *ngFor="let item of questions; let i = 'index + 1'">
+        <div class="data">
+          <app-flip-learn-card>
+
+            <div class="flash-card-front ion-text-center">
+                <img class="number" src="{{imagePath}}flip_uploads/{{item?.flip_image}}" alt="">
+            </div>
+
+            <div class="flash-card-back">
+              <div class="imageContainer ion-text-center">
+                <img class="number" src="{{imagePath}}flip_uploads/{{item?.flip_image}}" alt="">
+              </div>
+
+              <span class="question">{{i}}. {{item?.question}}</span>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-radio-group name="answer_{{item?.id}}" [allowEmptySelection]="true">
+                    <ion-col size="12">
+                      <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioAnswer($event, item.a, item?.answer, item?.id, item?.unit_id, i)" value="{{item.a}}">a. {{item?.a}}</ion-radio><br />
+                    </ion-col>
+                    <ion-col size="12">
+                      <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioAnswer($event, item.b, item?.answer, item?.id, item?.unit_id, i)" value="{{item.b}}">b. {{item?.b}}</ion-radio><br />
+                    </ion-col>
+                    <ion-col size="12">
+                      <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioAnswer($event, item.c, item?.answer, item?.id, item?.unit_id, i)" value="{{item.c}}">c. {{item?.c}}</ion-radio><br />
+                    </ion-col>
+                </ion-radio-group>
+                </ion-row>
+              </ion-grid>
+            </div>
+            
+          </app-flip-learn-card>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <!-- OFFLINE SECTION -->
+<ng-container *ngIf="!connection">
+
+  <div class="offlineClass ion-text-center">You are currently offline.</div>
+  
+    <div class="tapList ion-padding" *ngIf="questionsOffline?.length > 0">
+     <ng-container *ngFor="let item of questionsOffline; let i = 'index + 1'">
+        <div class="data">
+          <app-flip-learn-card>
+
+            <div class="flash-card-front ion-text-center">
+                <img class="number" [src]="item?.flip_image_offline_url" alt="">
+            </div>
+
+            <div class="flash-card-back">
+              <div class="imageContainer ion-text-center">
+                <img class="number" [src]="item?.flip_image_offline_url" alt="">
+              </div>
+
+              <span class="question">{{i}}. {{item?.question}}</span>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-radio-group name="answer_{{item?.id}}" [allowEmptySelection]="true">
+                    <ion-col size="12">
+                      <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioOfflineAnswer($event, item.a, item?.answer, item?.id, item?.unit_id, i)" value="{{item.a}}">a. {{item?.a}}</ion-radio><br />
+                    </ion-col>
+                    <ion-col size="12">
+                      <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioOfflineAnswer($event, item.b, item?.answer, item?.id, item?.unit_id, i)" value="{{item.b}}">b. {{item?.b}}</ion-radio><br />
+                    </ion-col>
+                    <ion-col size="12">
+                      <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioOfflineAnswer($event, item.c, item?.answer, item?.id, item?.unit_id, i)" value="{{item.c}}">c. {{item?.c}}</ion-radio><br />
+                    </ion-col>
+                </ion-radio-group>
+                </ion-row>
+              </ion-grid>
+            </div>
+            
+          </app-flip-learn-card>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>   
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>
+

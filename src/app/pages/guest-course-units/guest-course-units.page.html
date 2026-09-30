@@ -1,0 +1,55 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">Course Units</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="unit-icon ion-text-center">
+    <img src="assets//img/units/course-unit-icon.svg" alt="">
+  </div>
+
+  <div class="ion no-padding" *ngIf="freeUnits">
+    <ng-container  *ngFor="let unit of freeUnits">
+      <ion-card class="ion-padding" routerLink="/guest-unit-details/{{unit.id}}">
+        <div class="icon-section">
+          <img src="assets/img/units/{{unit?.icon_name}}" alt="">
+        </div>
+        <div class="unit-section">
+          <span class="unitNumber">{{unit?.unit_number}}</span>
+          <span class="unitTitle">{{unit?.unit_title}}</span>
+        </div>
+      </ion-card>
+    </ng-container>
+
+    <div class="ion no-padding" *ngIf="paidUnits">
+      <ng-container  *ngFor="let unit of paidUnits">
+        <ion-card class="ion-padding" (click)="notifyGuest()">
+          <div class="icon-section">
+            <img src="assets/img/units/disabled-unit.svg" alt="">
+          </div>
+          <div class="unit-section">
+            <span class="unitNumber">{{unit?.unit_number}}</span>
+            <span class="unitTitle">{{unit?.unit_title}}</span>
+          </div>
+        </ion-card>
+      </ng-container>
+    </div>
+  </div>
+
+  <ion-card color="danger" *ngIf="showMsg" class="ion-padding">
+    There is currently no course units!
+  </ion-card>
+
+</ion-content>
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer> </app-guest-footer>
+</ion-footer>

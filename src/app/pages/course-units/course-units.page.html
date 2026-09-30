@@ -1,0 +1,139 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">Course Units</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="unit-icon ion-text-center">
+    <img src="assets/img/units/course-unit-icon.svg" alt="">
+  </div>
+
+  <!-- ONLINE COURSES -->
+  <ng-container class="online" *ngIf="connected">
+    <div class="subscribed" *ngIf="isSubscriptionActive">
+      <div class="ion no-padding" *ngIf="units">
+        <ng-container *ngFor="let unit of units">
+          <ion-card class="ion-padding" routerLink="/course-unit-details/{{unit.id}}">
+            <div class="icon-section">
+              <img src="assets/img/units/{{unit?.icon_name}}" alt="">
+            </div>
+            <div class="unit-section">
+              <span class="unitNumber ">{{unit?.unit_number}}</span>
+              <span class="unitTitle">{{unit?.unit_title}}</span>
+            </div>
+          </ion-card>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="free" *ngIf="isFree">
+      <div class="ion no-padding" *ngIf="freeUnits">
+        <ng-container *ngFor="let unit of freeUnits">
+          <ion-card class="ion-padding" routerLink="/free-unit-details/{{unit.id}}">
+            <div class="icon-section">
+              <img src="assets/img/units/{{unit?.icon_name}}" alt="">
+            </div>
+            <div class="unit-section">
+              <span class="unitNumber">{{unit?.unit_number}}</span>
+              <span class="unitTitle">{{unit?.unit_title}}</span>
+            </div>
+          </ion-card>
+        </ng-container>
+
+        <div class="ion no-padding" *ngIf="paidUnits">
+          <ng-container *ngFor="let unit of paidUnits">
+            <ion-card class="ion-padding" (click)="checkPaidUnits()">
+              <div class="icon-section">
+                <img src="assets/img/units/disabled-unit.svg" alt="">
+              </div>
+              <div class="unit-section">
+                <span class="unitNumber">{{unit?.unit_number}}</span>
+                <span class="unitTitle">{{unit?.unit_title}}</span>
+              </div>
+            </ion-card>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+</ng-container>
+
+<!-- OFFLINE SECTION -->
+<ng-container class="offLine" *ngIf="!connected">
+  <div class="offlineClass ion-text-center">You are currently offline.</div>  
+  <div class="subscribed" *ngIf="isSubscriptionActive">
+    <!-- offlineUnits -->
+    <div class="ion no-padding" *ngIf="offlinePaidUnits?.length > 0">
+      <ng-container *ngFor="let unit of offlinePaidUnits">
+        <ion-card class="ion-padding" routerLink="/course-unit-details/{{unit.myunit_id}}">
+          <div class="icon-section">
+            <img src="assets/img/units/{{unit?.icon_name}}" alt="">
+          </div>
+          <div class="unit-section">
+            <span class="unitNumber">{{unit?.unit_number}}</span>
+            <span class="unitTitle">{{unit?.unit_title}}</span>
+          </div>
+        </ion-card>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="free" *ngIf="isFree">
+    <div class="ion no-padding" *ngIf="offlineFreeUnits?.length > 0">
+      <ng-container *ngFor="let unit of offlineFreeUnits">
+        <ion-card class="ion-padding" routerLink="/free-unit-lessons/{{unit.myunit_id}}">
+          <div class="icon-section">
+            <img src="assets/img/units/{{unit?.icon_name}}" alt="">
+          </div>
+          <div class="unit-section">
+            <span class="unitNumber">{{unit?.unit_number}}</span>
+            <span class="unitTitle">{{unit?.unit_title}}</span>
+          </div>
+        </ion-card>
+      </ng-container>
+
+      <div class="ion no-padding" *ngIf="offlinePaidUnits?.length > 0">
+        <ng-container *ngFor="let unit of offlinePaidUnits">
+          <ion-card class="ion-padding" (click)="checkPaidUnits()">
+            <div class="icon-section">
+              <img src="assets/img/units/disabled-unit.svg" alt="">
+            </div>
+            <div class="unit-section">
+              <span class="unitNumber">{{unit?.unit_number}}</span>
+              <span class="unitTitle">{{unit?.unit_title}}</span>
+            </div>
+          </ion-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  
+
+</ng-container>
+
+  <ion-card color="danger" *ngIf="showMsg" class="ion-padding">
+    There is currently no course units!
+  </ion-card>
+
+  <ng-container *ngIf="isSubscriptionActive">
+    <div class="bankBtn" *ngIf="units">
+      <ion-card class="cardBank ion-padding" routerLink="/user-menu/vocabulary-bank">
+        <img style="width: 30px;height: 'auto';" src="assets/img/dict-search.svg" alt="">
+        <span class="bankText">Vocabulary bank</span>
+      </ion-card>
+    </div>
+  </ng-container>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

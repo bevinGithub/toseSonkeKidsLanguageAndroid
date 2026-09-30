@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="hide-toolbar">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-logo">
+    <img src="assets/img/inner-header.svg" alt="">
+  </div>
+  <div class="ion-text-center tagline">
+    Continue as Guest<br>
+    <span class="orangeText">and speak Shona & Ndebele with Us!</span>
+  </div>
+
+  <div class="form-container ion-padding">
+    <form #f='ngForm' class="forms">
+      <ion-list>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.name" name="name" type="text" placeholder="Name"  autocapitalize="words" minlength="3"  #nameCtrl="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!nameCtrl.valid && nameCtrl.touched">
+          <span class="error-msg">Name should be at least a minimum of 3 characters!</span>
+        </div>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.surname" name="surname" type="text" placeholder="Surname" autocapitalize="words" minlength="3"  #surnameCtrl="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!surnameCtrl.valid && surnameCtrl.touched">
+          <span class="error-msg">Surname should be at least a minimum of 3 characters!</span>
+        </div>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.email" name="email" type="email" placeholder="Email Address" (ionBlur)="checkEmail()" #emailCtrl="ngModel" [email]="true"></ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!validEmail  && emailCtrl.touched">
+          <span class="error-msg">Please provide a valid email address</span>
+        </div>
+
+        <div class="line ion-text-center">
+          <img src="assets/img/line-seperator.svg" alt="">
+        </div>
+
+        <div class="terms ion-text-center">
+          By continuing you confirm that you agree to the <br><span class="termsPink" routerLink="/terms"> Terms of Use</span> and <span
+          class="termsPink" routerLink="/policy">Privacy Policy</span>
+        </div>
+
+      </ion-list>
+      <ion-button expand="block" fill="solid" shape="round" (click)="userSignUp()" [disabled]="!f.valid || !validEmail" color="primary1" class="submitBtn">
+        <span>CONTINUE</span>
+      </ion-button>
+
+      <div class="terms ion-text-center">
+        Already have an account? <span class="termsPink" routerLink="/signin">Sign-in here.</span>
+      </div>
+
+      <div class="line ion-text-center">
+        <img src="assets/img/line-seperator.svg" alt="">
+      </div>
+    </form>
+  </div>
+
+
+</ion-content>

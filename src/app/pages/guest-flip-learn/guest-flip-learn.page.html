@@ -1,0 +1,74 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]="unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tapLearn ion-text-center">
+    <h5 color="secondary">Flip & Learn</h5>
+  </div>
+
+  <div class="tapList ion-padding" *ngIf="questions !== 'empty'">
+    <ng-container *ngFor="let item of questions; let i = 'index + 1'">
+      <div class="data">
+        <app-guest-flip-learn-card>
+
+          <div class="flash-card-front ion-text-center">
+            <img class="number" src="{{imagePath}}flip_uploads/{{item?.flip_image}}" alt="">
+          </div>
+
+          <div class="flash-card-back">
+            <div class="imageContainer ion-text-center">
+              <img class="number" src="{{imagePath}}flip_uploads/{{item?.flip_image}}" alt="">
+            </div>
+
+            <span class="question">{{i}}. {{item?.question}}</span>
+
+            <ion-grid>
+              <ion-row>
+                <ion-radio-group name="answer_{{item?.id}}" [allowEmptySelection]="true">
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox"
+                      (ionFocus)="radioAnswer($event, item.a, item?.answer, item?.id, item?.unit_id, i)"
+                      value="{{item.a}}">a. {{item?.a}}</ion-radio><br />
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox"
+                      (ionFocus)="radioAnswer($event, item.b, item?.answer, item?.id, item?.unit_id, i)"
+                      value="{{item.b}}">b. {{item?.b}}</ion-radio><br />
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox"
+                      (ionFocus)="radioAnswer($event, item.c, item?.answer, item?.id, item?.unit_id, i)"
+                      value="{{item.c}}">c. {{item?.c}}</ion-radio><br />
+                  </ion-col>
+                </ion-radio-group>
+              </ion-row>
+            </ion-grid>
+          </div>
+
+        </app-guest-flip-learn-card>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="ion-padding"></div>
+  <div class="pronunciation">
+    <ion-card class="ion-padding ion-text-center" routerLink="/guest-watch-learn/{{unit?.id}}">
+      Next <ion-icon size="large" name="arrow-forward-circle" class="{{iconColor}}-app"></ion-icon>
+    </ion-card>
+  </div>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer></app-guest-footer>
+</ion-footer>

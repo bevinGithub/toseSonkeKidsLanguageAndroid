@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="hide-toolbar">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-logo">
+    <img src="assets/img/inner-header.svg" alt="">
+  </div>
+  <div class="ion-text-center tagline">
+    Activate Your Account<br>
+    <span class="orangeText">We have sent your activation code <br/>to your email address</span>
+  </div>
+
+  <div class="form-container ion-padding">
+    <form #f='ngForm' class="forms">
+
+      <div class="inputField">
+        <ion-input class="input" fill="outline" color="dark" shape="round" [(ngModel)]="user.activation_code"
+          name="activation_code" type="tel" placeholder="Activation Code" required #codeCtrl="ngModel"></ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="!codeCtrl.valid && codeCtrl.touched">
+          <span class="error-msg">Invalid activation code!</span>
+        </div>
+
+      </div>
+
+      <ion-button expand="block" fill="solid" shape="round" (click)="userActivation()" [disabled]="!f.valid"
+        color="primary" class="submitBtn"> <span>ACTIVATE & SIGN-IN</span>
+      </ion-button>
+
+    </form>
+  </div>
+
+
+</ion-content>

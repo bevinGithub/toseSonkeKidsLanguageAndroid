@@ -1,0 +1,47 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">GOOGLE PAY</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <div class="maroontext ion-text-center">
+    Subscription Selected
+  </div>
+
+  <ion-card class="ion-padding">
+  <ion-card-header>
+    <ion-card-title>{{ product?.title }}</ion-card-title>
+    <ion-card-subtitle>{{product?.offers[0].pricingPhases[0].price}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div *ngIf="googleSubscriptionID !== 'free_trial'">
+      {{ product?.description }}
+    </div>
+
+    <div *ngIf="googleSubscriptionID === 'free_trial'">
+      <p class="sub-text">After Free Trial ends, you'll be charged {{product?.offers[0].pricingPhases[0].price}} per month</p>
+      <p class="sub-text">Subscription auto-renews unless cancelled at least 24 hours before the trial ends.</p>
+      <p class="sub-text">Cancel anytime from the App under: <b>Profile -> View Subscription Details -> Cancel Subscription</b>.</p>
+      <p class="sub-text">You will not be charged during the free trial period.</p>
+    </div>
+
+  </ion-card-content>
+  <ion-button expand="block" color="primary" shape="round" (click)="subscribe({productID: product?.id})">SUBSCRIBE for {{product?.offers[0].pricingPhases[0].price}}</ion-button>
+</ion-card>
+
+
+
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

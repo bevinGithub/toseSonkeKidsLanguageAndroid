@@ -1,0 +1,127 @@
+.hide-toolbar {
+  display: none;
+}
+
+.home-logo {
+  margin-bottom: -10px;
+}
+
+.home-logo img {
+  width: 100%;
+}
+
+.tagline {
+  color: #21C1C1;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-family: 'Poppins SemiBold'
+}
+
+.orangeText {
+  color: #FFB634;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-family: 'Poppins SemiBold',
+}
+
+.pinkText {
+  color: #FB447C;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Poppins Light';
+}
+
+.inputField {
+  margin-bottom: 20px;
+}
+ion-input {
+  font-family: 'Poppins Regular';
+  font-size: 12px;
+  --border-width: 2px;
+}
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins Medium';
+  margin-bottom: 20px;
+}
+
+.btnText {
+  color: #313131 !important;
+  text-transform: initial !important;
+}
+
+.error-msg {
+  font-size: 12px;
+  font-family: 'Poppins Regular';
+  color: #fe0000;
+  text-align: left;
+  display: block;
+  padding-left: 10px;
+  margin-bottom: 6px;
+}
+
+.signInBtn {
+  border-radius: 30px;
+  background: #21C1C1;
+}
+
+.maroonBtn {
+  border-radius: 30px;
+  background: rgb(13,65,52);
+  background: linear-gradient(180deg, rgba(13,65,52,1) 0%, rgba(172,16,69,0.9304971988795518) 0%, rgba(13,65,31,1) 100%);
+}
+
+.terms {
+  color: #21C1C1;
+  margin-bottom: 0px;
+  font-size: 13px;
+  font-family: 'Poppins SemiBold',
+}
+
+.termsPink {
+  color: #FB447C;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Poppins SemiBold',
+}
+
+.termsMaroon {
+  color: #6D1330;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Poppins Light',
+}
+
+.gIcon {
+  position: fixed;
+  left: 8px;
+}
+
+ion-icon {
+  font-size: 25px;
+}
+
+.line img  {
+  width: 100%
+}
+
+ion-content {
+  --padding-bottom: 60px;
+}
+
+.terms {
+  color: #21C1C1;
+  margin-bottom: 0px;
+  font-size: 13px;
+  font-family: 'Poppins SemiBold',
+}
+
+.termsGreen {
+  color: #FB447C;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Poppins SemiBold',
+}

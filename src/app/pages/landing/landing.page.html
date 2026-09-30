@@ -1,0 +1,19 @@
+<ion-header  style="display: none;">
+  <ion-toolbar color="primary" class="hide-toolbar">
+
+    <ion-title class='ion-text-center'>WELCOME BACK</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <img class="abt-img" src="assets/img/inner-header.svg" alt="welcome">
+
+  <div color="dark"  class="ion-padding-left-right ion-text-center">
+    <h5>Welcome back <strong>{{ name }} {{ surname }}</strong></h5>
+    <h5>Please proceed to your Dashboard </h5>
+
+    <ion-button class="greenBtn" expand="block" color="primary" shape="round" routerLink="/user-menu/user-dashboard"> Dashboard </ion-button>
+  </div>
+
+</ion-content>

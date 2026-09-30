@@ -1,0 +1,90 @@
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container {
+  margin-bottom: 10px;
+}
+
+.front,
+.back {
+  // width: 90vw;
+  min-height: 60px;
+  max-height: 50vh;
+  margin: 0px auto;
+  display: block;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #fff;
+  backface-visibility: hidden;
+  border: 1px solid #dee2e3;
+  border-radius: 12px;
+  margin: 0;
+  position: static;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+  margin-top: -120px;
+}
+
+h5 {
+  font-size: 18px;
+  font-family: "Poppins SemiBold";
+  display: block;
+  color: #6d1330;
+}
+
+.wordEn,
+.wordSh {
+  display: block !important;
+}
+
+.wordSh {
+  font-size: 18px;
+  font-family: "Poppins SemiBold";
+  color: #af8648;
+}
+
+.wordEn {
+  font-size: 14px;
+  font-family: "Poppins Italic";
+  color: #6d1330;
+}
+
+.audio img {
+  position: relative;
+  top: 6px;
+  margin-right: 5px;
+}
+
+.usageContent {
+  font-family: "Poppins Regular";
+}
+
+
+.close {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+}

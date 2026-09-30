@@ -1,0 +1,22 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]="page?.title?.rendered"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-left tagline">
+    <div class="terms" [innerHTML]="page?.content?.rendered"></div>
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

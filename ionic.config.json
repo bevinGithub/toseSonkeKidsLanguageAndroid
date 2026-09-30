@@ -1,0 +1,7 @@
+{
+  "name": "Tose Bonke",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

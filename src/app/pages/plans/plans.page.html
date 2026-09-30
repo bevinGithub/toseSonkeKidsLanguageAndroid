@@ -1,0 +1,269 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">PLANS & PRICING</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="maroontext ion-text-center">
+    Subscription Plans
+  </div>
+
+
+  <ion-accordion-group>
+    <ion-accordion *ngIf="freePlan" value="first" >
+      <ion-item slot="header">
+        <ion-label class="headerTitle brownText">{{freePlan?.title}}</ion-label>
+      </ion-item>
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="cardTrial">Access to one free unit</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              Upgrade subscription Anytime
+            </div>
+            <div class="sector_1">
+              {{freePlan?.description}}
+            </div>
+
+            <div class="sector_1">
+              Subscription auto-renews unless cancelled at least 24 hours before the trial ends.
+            </div>
+            <div class="sector_1">
+              Cancel anytime from the App under: <b>Profile -> View Subscription Details -> Cancel Subscription</b>.
+            </div>
+            <div class="sector_1">
+              You will not be charged during the free trial period.
+            </div>            
+
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{freePlan?.id}}">
+              <ion-button color="primary1" shape="round" expand="block" class="brownBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="primary1" shape="round" expand="block" class="brownBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="second">
+      <ion-item slot="header">
+        <ion-label class="headerTitle orangeText">{{standardPlanMon?.title}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card standardMonthly"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="headerSub">${{standardPlanMon?.amount | number: '1.2-2'}} p/m</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              {{standardPlanMon?.app_description}}
+            </div>
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{standardPlanMon?.id}}">
+              <ion-button color="yellow-app" shape="round" expand="block" class="orangeBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="yellow-app" shape="round" expand="block" class="orangeBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="third">
+      <ion-item slot="header">
+        <ion-label class="headerTitle blueText">{{standardPlanYr?.title}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="headerSub">${{standardPlanYr?.amount | number: '1.2-2'}} p/yr</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              {{standardPlanYr?.app_description}}
+            </div>
+             <!-- NO SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{standardPlanYr?.id}}">
+              <ion-button color="primary1" shape="round" expand="block" class="blueBtn">
+                SUBSCRIBE
+              </ion-button>              
+            </div>
+            <!-- ACTIVE SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="primary1" shape="round" expand="block" class="blueBtn">
+                SUBSCRIBE
+              </ion-button>              
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="fourth">
+      <ion-item slot="header">
+        <ion-label class="headerTitle pinkText">{{familyDuoPlanMon?.title}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="headerSub">${{familyDuoPlanMon?.amount | number: '1.2-2'}} p/m</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              Shared Access to Content Library
+            </div>
+            <div class="sector_1">
+              {{familyDuoPlanMon?.app_description}}
+            </div>
+            <!-- NO SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{familyDuoPlanMon?.id}}">
+              <ion-button color="primary1" shape="round" expand="block" class="pinkBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+            <!-- ACTIVE SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="primary1" shape="round" expand="block" class="pinkBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="fifth">
+      <ion-item slot="header">
+        <ion-label class="headerTitle pinkText">{{familyDuoPlanYr?.title}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="headerSub">${{familyDuoPlanYr?.amount | number: '1.2-2'}} p/yr</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              Shared Access to Content Library
+            </div>
+            <div class="sector_1">
+              {{familyDuoPlanYr?.app_description}}
+            </div>
+            <!-- NO SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{familyDuoPlanYr?.id}}">
+              <ion-button color="primary1" shape="round" expand="block" class="pinkBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+            <!-- ACTIVE SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="primary1" shape="round" expand="block" class="pinkBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="sixth">
+      <ion-item slot="header">
+        <ion-label class="headerTitle ligtGreenText">{{familyGroupPlanMon?.title}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="headerSub">${{familyGroupPlanMon?.amount | number: '1.2-2'}} p/m</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              Shared Access to Content Library
+            </div>
+            <div class="sector_1">
+              {{familyGroupPlanMon?.app_description}}
+            </div>
+            <!-- NO SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{familyGroupPlanMon?.id}}">
+              <ion-button color="primary1" shape="round" expand="block" class="lightGreenBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+            <!-- ACTIVE SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="primary1" shape="round" expand="block" class="lightGreenBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="seventh">
+      <ion-item slot="header">
+        <ion-label class="headerTitle ligtGreenText">{{familyGroupPlanYr?.title}}</ion-label>
+      </ion-item>
+
+      <div class="ion-padding1" slot="content" style="display: block;">
+        <ion-card class="card"  style="display: block;">
+          <ion-card-header class="ion-text-center">
+            <ion-card-title class="headerSub">${{familyGroupPlanYr?.amount | number: '1.2-2'}} p/yr</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div class="sector_1">
+              Shared Access to Content Library
+            </div>
+            <div class="sector_1">
+              {{familyGroupPlanYr?.app_description}}
+            </div>
+            <!-- NO SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus !== 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/payment-options/{{familyGroupPlanYr?.id}}">
+              <ion-button color="primary1" shape="round" expand="block" class="lightGreenBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+
+            <!-- ACTIVE SUBSCRIPTION -->
+            <div *ngIf="subscriptionStatus === 'Active'" class="btnSector sector_11 ion-padding ion-text-center" routerLink="/subscription-details">
+              <ion-button color="primary1" shape="round" expand="block" class="lightGreenBtn">
+                SUBSCRIBE
+              </ion-button>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-accordion>
+
+  </ion-accordion-group>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

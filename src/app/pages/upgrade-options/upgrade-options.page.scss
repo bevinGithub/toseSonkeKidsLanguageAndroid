@@ -1,0 +1,182 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ion-toolbar {
+  // width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.cardTrial {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: 'Poppins SemiBold';
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerSub {
+  font-size: 14px;
+  font-family: 'Poppins SemiBold';
+}
+
+h5 {
+  font-size: 18px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+}
+
+h6 {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #0D4134;
+}
+
+.headerTitle {
+  text-transform: uppercase;
+}
+
+.maroontext {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+  margin-bottom: 15px;
+}
+
+.maroonText {
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+}
+
+.greenText {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #0D4134;
+  margin-bottom: 15px;
+}
+
+.subTitle {
+  font-family: 'Poppins SemiBold';
+  display: block;
+}
+
+.brownText {
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #A85A46;
+}
+
+.orangeText {
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #FFB634;
+}
+
+.orangeBtn {
+  font-family: 'Poppins SemiBold';
+  display: block;
+  background: #FFB634;
+  border-radius: 25px;
+}
+
+.blueText {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #44B9FF;
+  margin-bottom: 15px;
+}
+
+.blueBtn {
+  font-family: 'Poppins SemiBold';
+  display: block;
+  background: #44B9FF;
+  border-radius: 25px;
+}
+
+.pinkBtn {
+  border-radius: 30px;
+  background: #F993A4
+}
+
+.lightGreenBtn {
+  border-radius: 30px;
+  background: #6BC6C6
+}
+
+.brownText {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #AF8648;
+  margin-bottom: 15px;
+}
+
+.pinkText {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #F4647C;
+  margin-bottom: 15px;
+}
+
+.ligtGreenText {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6BC6C6;
+  margin-bottom: 15px;
+}
+
+ion-item {
+    margin-bottom: 10px;
+    border: 2px solid #eeeeee;
+    padding-left: 8px;
+}
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins SemiBold';
+}
+
+ion-label, label {
+  font-size: 13px;
+  font-family: 'Poppins Regular';
+}
+
+
+.sector_1 {
+  border-top: 1px solid #E1E1E1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btnSector {
+  border-top: 1px solid #E1E1E1;
+}
+

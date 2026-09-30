@@ -1,0 +1,102 @@
+.headerBg {
+  // height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.toolbar-title {
+	font-size: 10px;
+}
+
+.title-text {
+	font-size: 16px;
+}
+
+.tagline {
+  color: #0D4134;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-family: 'Poppins SemiBold'
+}
+
+.titleText {
+  color: #313131;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-family: 'Poppins Regular';
+  text-align: justify !important;
+}
+
+.terms {
+  color: #313131;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-family: 'Poppins Regular',
+}
+
+.maroonText {
+  color: #6D1330;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Poppins Light';
+}
+
+ion-button {
+  font-family: 'Poppins SemiBold';
+  background: rgb(13,65,52);
+  background: linear-gradient(180deg, rgba(13,65,52,1) 0%, rgba(172,16,69,0.9304971988795518) 0%, rgba(13,65,31,1) 100%);
+}
+
+
+//footer
+ion-footer {
+  // height: 100px;
+}
+
+@media screen and (min-width : 365px) and (max-width: 410px) {
+  .topContainer {
+    background: #E4D9C7;
+    width: 100%;
+    display: block;
+    height: 20px;
+  }
+
+  .headerBg {
+    background: url('../../../assets/img/toolbar.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 0px;
+    height: 115px !important;
+  }
+}
+
+@media screen and (min-width : 411px) and (max-width: 576px) {
+  .topContainer {
+    background: #E4D9C7;
+    width: 100%;
+    display: block;
+    height: 20px;
+  }
+
+  .headerBg {
+    background: url('../../../assets/img/toolbar.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 0px;
+    height: 115px !important;
+  }
+}

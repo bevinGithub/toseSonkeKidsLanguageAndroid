@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tose Sonke Kids</string>
+    <string name="title_activity_main">Tose Sonke Kids</string>
+    <string name="package_name">com.tosesonkekids</string>
+    <string name="custom_url_scheme">com.tosesonkekids</string>
+    <string name="facebook_app_id">1376194076996349</string>
+    <string name="fb_login_protocol_scheme">fb1376194076996349</string>
+    <string name="facebook_client_token">4eaf3d5d6d77e9e13a07489467c12598</string>
+</resources>

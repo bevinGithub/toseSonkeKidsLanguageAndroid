@@ -1,0 +1,33 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">SUBSCRIPTION</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <div class="maroontext ion-text-center">
+    Payment and Billing Options
+  </div>
+
+  <div class="payments">
+    <div class="paypal">
+      <img *ngIf="userId" src="assets/img/payments/paypal-2.svg" (click)="paypalCheckout( {userID: userId}, {'planID': planId} )">
+    </div>
+
+    <div class="gPay" routerLink="/google-pay-subscription/{{planId}}">
+      <img src="assets/img/payments/gPay-2.svg" alt="">
+    </div>
+  </div>
+
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

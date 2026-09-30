@@ -1,0 +1,50 @@
+<ion-menu contentId='content'>
+  <ion-header class="ion-no-border">
+
+  </ion-header>
+
+  <ion-content>
+
+    <div id="profile-pic" class="ion-text-center">
+      <img class="profilePhoto" *ngIf="user?.profile_photo === null"  src="assets/img/avatars/avatar-1.svg" alt="User Profile">
+      <img class="profilePhoto" *ngIf="user?.profile_photo !== null"  src="assets/img/avatars/{{user?.profile_photo}}" alt="User Profile">
+      <p *ngIf="user?.source === ''" class="name">{{ user?.name }} {{ user?.surname }} <br /><span class="email">{{
+          user?.email }}</span></p>
+      <p *ngIf="user?.source !== ''" class="name">{{ user?.name }}<br /><span class="email">{{ user?.email }}</span></p>
+    </div>
+
+    <ion-list lines="none">
+      <ion-menu-toggle auto-hide="false">
+        <ion-item (click)="loadPage({page: pages[0].url})">
+          <img src="assets/img/menu/menu-home.svg" alt="">
+          <ion-label>{{pages[0].title}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item (click)="loadPage({page: pages[1].url})">
+          <img style="width: 15px" src="assets/img/menu/menu-course.svg" alt="">
+          <ion-label>{{pages[1].title}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle>
+        <ion-item (click)="loadPage({page: pages[2].url})">
+          <img style="width: 15px" src="assets/img/menu/menu-course.svg" alt="">
+          <ion-label>{{pages[2].title}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <ion-menu-toggle auto-hide="false">
+        <ion-item (click)="logOut()">
+          <img src="assets/img/menu/menu-logout.svg" alt="">
+          <ion-label>Guest Logout</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<ion-router-outlet id="content" main></ion-router-outlet>

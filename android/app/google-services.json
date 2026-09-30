@@ -1,0 +1,190 @@
+{
+  "project_info": {
+    "project_number": "7504422072",
+    "project_id": "toseapp-ef089",
+    "storage_bucket": "toseapp-ef089.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7504422072:android:7ad77bd5f03c530c86004d",
+        "android_client_info": {
+          "package_name": "com.diversioapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7504422072-01nu6cr9ajd0tm3oue7vj9vok4c3q1k1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diversioapp",
+            "certificate_hash": "9c491287cbf2f600672d82fd78d08ac978558bcb"
+          }
+        },
+        {
+          "client_id": "7504422072-0dit82urp4t4232g6njbcvbu71vuu66r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diversioapp",
+            "certificate_hash": "d28d114a8360313d67968526ae0d64854ab27d5f"
+          }
+        },
+        {
+          "client_id": "7504422072-4vrc2sh4efdhe42uose38hkgmj7jtbe1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diversioapp",
+            "certificate_hash": "ba7948984423318361dcaa113a59d8efc3b0de8e"
+          }
+        },
+        {
+          "client_id": "7504422072-2ot5t5ph0gorq3ngcve8u5uv3neeirmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1GFLu4Xn9Kcdfmdgmgc5cnZewxE_fs8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7504422072-2ot5t5ph0gorq3ngcve8u5uv3neeirmf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "7504422072-609c6en5om01poimao8stgli6uierftp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tosesonke.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7504422072:android:d6719f925801223486004d",
+        "android_client_info": {
+          "package_name": "com.tosesonke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7504422072-0o1obq97btjc4820rddirfvg1c6l1hhp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tosesonke",
+            "certificate_hash": "41225abba6c1a9eb03633c9e585491853f83effa"
+          }
+        },
+        {
+          "client_id": "7504422072-49dm80iqkln2h9s8hmj16ib5nrnhjo72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tosesonke",
+            "certificate_hash": "fde1bc3265995d1ab15b3e3960fc40cc8aece8c9"
+          }
+        },
+        {
+          "client_id": "7504422072-j1hkg5mpb9koj3oo9pvuag85h8agj5pt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tosesonke",
+            "certificate_hash": "9aaa33f21c780fcc241cc33ab1327ee9ceb98242"
+          }
+        },
+        {
+          "client_id": "7504422072-2ot5t5ph0gorq3ngcve8u5uv3neeirmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1GFLu4Xn9Kcdfmdgmgc5cnZewxE_fs8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7504422072-2ot5t5ph0gorq3ngcve8u5uv3neeirmf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "7504422072-609c6en5om01poimao8stgli6uierftp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tosesonke.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7504422072:android:c17dbdadf527760586004d",
+        "android_client_info": {
+          "package_name": "com.tosesonkekids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7504422072-arjb0v6lotekfj8dhijm2bvg2hvcinfv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tosesonkekids",
+            "certificate_hash": "b52210d2a49daf99706295600af968dc1b7fa114"
+          }
+        },
+        {
+          "client_id": "7504422072-bbpgs3ttmb1unbgjsf3gs37l4rr3pta5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tosesonkekids",
+            "certificate_hash": "9969cf6c86c85f397bf6d800901beba522506034"
+          }
+        },
+        {
+          "client_id": "7504422072-jjre3mjjhdueu3ccgq8pt1o4mjvjitke.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tosesonkekids",
+            "certificate_hash": "ff58665cd1fbd52f930677cd1fcb5d3d8888f49e"
+          }
+        },
+        {
+          "client_id": "7504422072-2ot5t5ph0gorq3ngcve8u5uv3neeirmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1GFLu4Xn9Kcdfmdgmgc5cnZewxE_fs8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7504422072-2ot5t5ph0gorq3ngcve8u5uv3neeirmf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "7504422072-609c6en5om01poimao8stgli6uierftp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tosesonke.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

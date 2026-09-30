@@ -1,0 +1,108 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">VOCABULARY BANK</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="maroontext ion-text-center">
+    <div class="icon">
+      <img src="assets/img/dict-search.svg" alt="">
+    </div>
+    Select language then search for your word.
+  </div>
+
+  <div class="searchForm">
+    <form #f='ngForm' class="forms ion-padding">
+
+      <div class="inputField">
+        <ion-select [(ngModel)]="word.lanID" name="lanID" (ionChange)="onLanguageChange($event)" fill="outline" shape="round"  label="Select a Language" placeholder="Options" shape="round" labelPlacement="" required>
+          <ion-select-option *ngFor="let item of languages"  value="{{item?.id}}">{{item?.language}}</ion-select-option>
+        </ion-select>
+      </div>
+
+      <div class="inputField">
+        <ion-input class="input" fill="outline" color="medium" shape="round" [(ngModel)]="word.word_en" name="word_en"
+            type="text" placeholder="Search Word" [debounce]="2000" (ionInput)="searchWords($event)"  >
+            <ion-icon slot="end" size="medium" color="large" name="search-outline"></ion-icon>
+        </ion-input>
+      </div>
+    </form>
+  </div>
+
+  <div class="wordsList">
+
+    <!-- TAP & LEARN LIST -->
+    <div class="tapList" *ngIf="tapWords !== 'empty'">
+      <ng-container *ngFor="let item of tapWords; let i = 'index + 1'">
+        <div id="{{i}}" class="data">
+          <app-flashcard>
+            <div class="flash-card-front">
+              {{item?.word_en}}
+            </div>
+            <div class="flash-card-back">
+              <span class="wordSh">
+                {{item?.word_sh}}
+              </span>
+              <span class="wordEn">
+                {{item?.word_en}}
+              </span>
+                <div class="usage">
+                  <div class="usageContent" [innerHTML]="item?.word_usage"></div>
+                </div>
+            </div>
+            <div class="sep" style="clear: both;">
+              &nbsp;
+            </div>
+          </app-flashcard>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- BANK WORDS LIST -->
+    <div class="bankList" *ngIf="bankWords !== 'empty'">
+      <ng-container *ngFor="let item of bankWords; let i = 'index + 1'">
+        <div id="{{i}}" class="data">
+          <app-flashcard>
+            <div class="flash-card-front">
+              {{item?.word_en}}
+            </div>
+            <div class="flash-card-back">
+              <span class="wordSh">
+                {{item?.word_sh}}
+              </span>
+              <span class="wordEn">
+                {{item?.word_en}}
+              </span>
+              <div class="usage">
+                <div class="usageContent" [innerHTML]="item?.word_usage"></div>
+              </div>
+            </div>
+            <div class="sep" style="clear: both;">
+              &nbsp;
+            </div>
+          </app-flashcard>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- FLASH NOTICE MESSAGE -->
+    <ion-card color="danger" class="ion-padding" *ngIf="showMsg">
+      No records found!
+    </ion-card>
+  </div>
+
+
+</ion-content>
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>
+

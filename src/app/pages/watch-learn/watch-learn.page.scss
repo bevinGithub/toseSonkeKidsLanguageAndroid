@@ -1,0 +1,40 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: 'Poppins Regular';
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.watchLearn h5 {
+    font-size: 18px;
+    color: var(--ion-color-medium);
+    font-family: 'Poppins SemiBold';
+}
+
+ion-card {
+    padding: 10px;
+}

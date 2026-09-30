@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="hide-toolbar">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-logo">
+    <img src="../../../assets/img/inner-header.svg" alt="">
+  </div>
+  <div class="ion-text-center tagline">
+    Sign-In<br>
+    <span class="orangeText">and speak Shona & Ndebele with Us!</span>
+  </div>
+
+  <div class="form-container ion-padding">
+    <form #f='ngForm' class="forms">
+
+      <div class="inputField">
+        <ion-input class="input" fill="outline" color="medium" shape="round" [(ngModel)]="user.email" name="email"
+          type="email" placeholder="Email Address"  (ionBlur)="checkEmail()" required #emailCtrl="ngModel"> </ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="!validEmail && emailCtrl.touched">
+          <span class="error-msg">Invalid email address!</span>
+        </div>
+      </div>
+
+      <div class="inputField">
+        <ion-input class="input" fill="outline" color="medium" shape="round"
+          [(ngModel)]="user.password" name="password" type="{{type}}" placeholder="Password"required #passwordCtrl="ngModel">
+          <ion-icon slot="end" color="dark" name="eye-outline"(click)="showPasswordText()"></ion-icon>
+        </ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+          <span class="error-msg">Invalid password!</span>
+        </div>
+      </div>
+
+      <ion-input class="hidden-input" [(ngModel)]="user.device_id" name="device_id" placeholder="Device ID" type="text"></ion-input>
+      <ion-button expand="block" fill="solid" shape="round" (click)="userSignIn()" [disabled]="!f.valid || !validEmail"
+        color="primary1" class="signInBtn"> <span>SIGN-IN</span>
+      </ion-button>
+
+    </form>
+
+    <div class="terms ion-text-center">
+      <span class="termsGreen" style="font-weight: 600;">Parental or legal guardian consent <br>required if under 13</span>
+      <br>
+      By continuing you confirm that you agree to the <br><span class="termsGreen" routerLink="/terms"> Terms of
+        Use</span> and <span class="termsGreen" routerLink="/policy">Privacy Policy</span>
+    </div>
+    <br>
+    <div class="btn-container">
+
+      <div class="terms ion-text-center">
+        Need an account? <span class="termsPink" routerLink="/signup">Sign-up here.</span>
+      </div>
+
+      <div class="terms ion-text-center">
+        <span class="termsPink" routerLink="/forgot-password"> Forgot Password</span>
+      </div>
+
+      <div class="line ion-text-center" style="margin-bottom: 5px;">
+        <img src="../../../assets/img/line-seperator.svg" alt="">
+      </div>
+
+      <div class="terms ion-text-center" style="margin-bottom: 10px;">
+        Continue with external platforms:
+      </div>
+
+      <ion-button fill="outline" expand="block" color="dark" shape="round" class="btn" (click)="googleLogin()" >
+        <span class="gIcon"><img st src="../../../assets/img/google.svg" alt=""></span> <span class="btnText">Continue with Google</span>
+      </ion-button>
+
+      <ion-button fill="outline" expand="block" color="dark" shape="round" class="btn" (click)="facebookLogin()">
+        <span class="gIcon"><img st src="../../../assets/img/fb.svg" alt=""></span> <span class="btnText">Continue with Facebook</span>
+      </ion-button>
+
+      <!-- <ion-button fill="outline" expand="block" color="dark" shape="round" class="btn" (click)="appleLogin()">
+        <span class="gIcon"><img st src="../../../assets/img/apple.svg" alt=""></span> <span class="btnText">Continue with Apple</span>
+      </ion-button> -->
+
+    </div>
+
+
+  </div>
+
+
+</ion-content>

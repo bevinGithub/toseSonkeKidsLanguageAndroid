@@ -1,0 +1,61 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]=" lesson?.lesson_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="icon-div ion-text-center" *ngIf="lesson?.video_url">
+    <ng-container>
+      <img  (click)="viewVideo({ lesson })" class="video-icon" src="assets/img/intro-video-button.svg" alt="">
+    </ng-container>
+  </div>
+
+  <div class="lessonContent ion-padding ion-text-center">
+    <span class="desc">{{ lesson?.lesson_description }}</span>
+    <span class="objectives">{{ lesson?.lesson_objectives }}</span>
+  </div>
+
+  <div class="tap-learn" *ngIf="taps !== 'empty'">
+    <ion-card class="ion-padding ion-text-center" routerLink="/guest-tap-learn/{{taps?.lesson_id}}">
+      Tap and Learn <ion-icon size="large" name="arrow-forward-circle" class="{{lesson?.lesson_color}}"></ion-icon>
+    </ion-card>
+  </div>
+
+  <div class="cultural" *ngIf="cultures !== 'empty'">
+    <ion-card class="ion-padding ion-text-center" routerLink="/guest-cultural-insights/{{cultures?.lesson_id}}">
+     Cultural Insights <ion-icon size="large" name="arrow-forward-circle" class="{{lesson?.lesson_color}}"></ion-icon>
+    </ion-card>
+  </div>
+
+  <div class="review" *ngIf="reviewsMC !== 'empty' || reviewsMW !== 'empty'">
+    <ion-card class="ion-padding ion-text-center" routerLink="/guest-review/{{reviewsMC?.lesson_id}}">
+      Review Exercises <ion-icon size="large" name="arrow-forward-circle" class="{{lesson?.lesson_color}}"></ion-icon>
+    </ion-card>
+  </div>
+
+  <div class="pronunciation" *ngIf="taps !== 'empty'">
+    <ion-card class="ion-padding ion-text-center" routerLink="/guest-pronunciation-practice/{{taps?.lesson_id}}">
+      Pronunciation Practice <ion-icon size="large" name="arrow-forward-circle" class="{{lesson?.lesson_color}}"></ion-icon>
+    </ion-card>
+
+    <div class="pronunciation">
+      <ion-card class="ion-padding ion-text-center" routerLink="/guest-menu/guest-dashboard">
+        Dashboard <ion-icon size="large" name="arrow-forward-circle" class="{{lesson?.lesson_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+  </div>
+
+</ion-content>
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer> </app-guest-footer>
+</ion-footer>

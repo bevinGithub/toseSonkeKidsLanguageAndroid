@@ -1,0 +1,55 @@
+.toolbar-container {
+  // padding-top: 10px;
+  // background: #E4D9C7;
+}
+
+.page-title {
+  position: relative;
+  text-align: center;
+  display: block;
+  margin-top: 4px;
+  top: 14px;
+  font-family: 'Poppins SemiBold';
+  color: #21C1C1;
+}
+
+.home-logo img {
+  width: 100%;
+  margin-top: -28px
+}
+
+.menu-btn {
+  width: 40px;
+  position: absolute;
+}
+
+.tagline {
+  color: #21C1C1;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-family: 'Poppins SemiBold'
+}
+
+.orangeText {
+  color: #FFB634;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 21px;
+  font-family: 'Poppins SemiBold',
+}
+
+.pinkText {
+  color: #FB447C;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-family: 'Poppins SemiBold';
+}
+
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins SemiBold';
+}
+
+

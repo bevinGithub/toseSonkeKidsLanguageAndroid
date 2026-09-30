@@ -1,0 +1,126 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]="unit?.unit_title"></ion-title>
+
+    <ion-buttons slot="end" (click)="openActionSheet({ unit_id: unit?.id })">
+      <ion-icon style="font-size: 20px;" class="networkIcon" color="primary" name="wifi-outline"></ion-icon>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ng-container *ngIf="connected">
+    <div class="unitImage ion-padding ion-text-center">
+      <img src="{{imagePath}}course_unit_uploads/{{unit?.unit_image}}" alt="">
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!connected">
+    <div class="unitImage ion-padding ion-text-center">
+      <img src="{{unitLocalImage}}" alt="">
+    </div>
+  </ng-container>
+
+
+  <div class="unitContent ion-text-center ion-padding">
+    <span class="desc">{{ unit?.unit_description }}</span>
+    <span class="objectives">{{ unit?.unit_objectives }}</span>
+  </div>
+
+  <!-- ONLINE CONNECTION -->
+  <ng-container *ngIf="connected">
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/tap-learn/{{tapLearn?.unit_id}}">
+        Tap & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{tapLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn" *ngIf="flipLearn !== 'empty'">
+      <ion-card class="ion-padding ion-text-center" routerLink="/flip-learn/{{flipLearn?.unit_id}}">
+        Flip & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{flipLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn" *ngIf="watchLearn !== 'empty'">
+      <ion-card class="ion-padding ion-text-center" routerLink="/watch-learn/{{watchLearn?.unit_id}}">
+        Watch & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{watchLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn" *ngIf="singLearn !== 'empty'">
+      <ion-card class="ion-padding ion-text-center" routerLink="/sing-learn/{{singLearn?.unit_id}}">
+        Sing & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{singLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn" *ngIf="practiceLearn !== 'empty'">
+      <ion-card class="ion-padding ion-text-center" routerLink="/practice-time/{{practiceLearn?.unit_id}}">
+        Practice Time <ion-icon size="large" name="arrow-forward-circle"
+          class="{{practiceLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn" *ngIf="rhymesLearn !== 'empty'">
+      <ion-card class="ion-padding ion-text-center" routerLink="/rhymes-playlist/{{rhymesLearn?.unit_id}}">
+        Rhymes Playlist <ion-icon size="large" name="arrow-forward-circle"
+          class="{{rhymesLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+  </ng-container>
+
+  <!-- OFFLINE DATA -->
+  <ng-container *ngIf="!connected">
+    <div class="offlineClass ion-text-center">You are currently offline.</div>
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/tap-learn/{{unit?.myunit_id}}">
+        Tap & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{tapLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/flip-learn/{{unit?.myunit_id}}">
+        Flip & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{flipLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/watch-learn/{{unit?.myunit_id}}">
+        Watch & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{watchLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/sing-learn/{{unit?.myunit_id}}">
+        Sing & Learn <ion-icon size="large" name="arrow-forward-circle" class="{{singLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/practice-time/{{unit?.myunit_id}}">
+        Practice Time <ion-icon size="large" name="arrow-forward-circle"
+          class="{{practiceLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+
+    <div class="tap-learn">
+      <ion-card class="ion-padding ion-text-center" routerLink="/rhymes-playlist/{{unit?.myunit_id}}">
+        Rhymes Playlist <ion-icon size="large" name="arrow-forward-circle"
+          class="{{rhymesLearn?.unit_color}}"></ion-icon>
+      </ion-card>
+    </div>
+  </ng-container>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

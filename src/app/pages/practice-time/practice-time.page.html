@@ -1,0 +1,140 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]=" unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="tapLearn ion-text-center">
+    <h5 color="secondary">Practice Time</h5>
+  </div>
+
+  <ng-container *ngIf="connected">
+    <div class="form ion-padding">
+      <form #f='ngForm' class="forms" *ngIf="questions !== 'empty'">      
+          <div class="questionContainer"  *ngFor="let item of questions; let i = 'index + 1'">
+            <div class="imageQue ion-text-center" *ngIf="item?.upload_type === 'Image'">
+              <img src="{{imageAudioPath}}practice_uploads/{{item?.image_file}}" alt="">
+            </div>
+
+            <div class="imageQue ion-text-left" *ngIf="item?.upload_type === 'Audio'">
+              <ng-container *ngIf="item?.audio_file !== ''">
+                <ion-grid fixed>
+                  <ion-row>
+
+                    <ion-col size="auto" *ngIf="record?.id !== item?.id"> 
+                      <span class="audio">
+                        <img *ngIf="!isPlaying && record?.id !== item?.id"  (click)="playAudio({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="isPlaying && record?.id !== item?.id"  (click)="playAudio({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="isPlaying && record?.id === item?.id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                      </span>
+                    </ion-col>
+
+                    <ion-col size="auto" *ngIf="record?.id === item?.id"> 
+                      <span class="audio">
+                        <img *ngIf="!isPlaying && record?.id !== item?.id"  (click)="playAudio({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="!isPlaying && record?.id === item?.id"  (click)="playAudio({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="isPlaying && record?.id === item?.id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                      </span>
+                    </ion-col>
+
+                    <ion-col size="10">
+                      <span  class="listenText">Listen to pronunciation <span class="text" *ngIf="isPlaying && record?.id === item?.id">Playing...</span>  </span>
+                    </ion-col>
+
+                  </ion-row>
+                </ion-grid>
+              </ng-container>
+            </div>
+
+            <ion-grid>
+              <ion-row>
+                <ion-radio-group name="answer_{{item?.id}}" [allowEmptySelection]="true">
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioAnswer($event, item.a, item?.answer, item?.id, item?.unit_id, i)" value="{{item.a}}">a. {{item?.a}}</ion-radio><br />
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioAnswer($event, item.b, item?.answer, item?.id, item?.unit_id, i)" value="{{item.b}}">b. {{item?.b}}</ion-radio><br />
+                  </ion-col>
+              </ion-radio-group>
+              </ion-row>
+            </ion-grid>
+          </div>
+      </form>
+    </div>
+  </ng-container>
+
+  <!-- OFFLINE SECTION -->
+  <ng-container *ngIf="!connected">
+    <div class="offlineClass ion-text-center">You are currently offline.</div>
+    <div class="form ion-padding">
+      <form #f='ngForm' class="forms" *ngIf="questions !== 'empty'">      
+          <div class="questionContainer"  *ngFor="let item of questions; let i = 'index + 1'">
+            <div class="imageQue ion-text-center" *ngIf="item?.upload_type === 'Image'">
+              <img src="{{item?.image_file_offline}}" alt="">
+            </div>
+
+            <div class="imageQue ion-text-left" *ngIf="item?.upload_type === 'Audio'">
+              <ng-container *ngIf="item?.audio_file !== ''">
+                <ion-grid fixed>
+                  <ion-row>
+
+                    <ion-col size="auto" *ngIf="record?.mysql_id !== item?.mysql_id"> 
+                      <span class="audio">
+                        <img *ngIf="!isPlaying && record?.mysql_id !== item?.mysql_id"  (click)="playAudioOnDevice({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="isPlaying && record?.mysql_id !== item?.mysql_id"  (click)="playAudioOnDevice({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="isPlaying && record?.mysql_id === item?.mysql_id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                      </span>
+                    </ion-col>
+
+                    <ion-col size="auto" *ngIf="record?.mysql_id === item?.mysql_id"> 
+                      <span class="audio">
+                        <img *ngIf="!isPlaying && record?.mysql_id !== item?.mysql_id"  (click)="playAudioOnDevice({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="!isPlaying && record?.mysql_id === item?.mysql_id"  (click)="playAudioOnDevice({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                        <img *ngIf="isPlaying && record?.mysql_id === item?.mysql_id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                      </span>
+                    </ion-col>
+
+                    <ion-col size="10">
+                      <span  class="listenText">Listen to pronunciation <span class="text" *ngIf="isPlaying && record?.mysql_id === item?.mysql_id">Playing...</span>  </span>
+                    </ion-col>
+
+                  </ion-row>
+                </ion-grid>
+              </ng-container>
+            </div>
+
+            <ion-grid>
+              <ion-row>
+                <ion-radio-group name="answer_{{item?.id}}" [allowEmptySelection]="true">
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioOfflineAnswer($event, item.a, item?.answer, item?.id, item?.unit_id, i)" value="{{item.a}}">a. {{item?.a}}</ion-radio><br />
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-radio labelPlacement="end" aria-label="Custom checkbox" (ionFocus)="radioOfflineAnswer($event, item.b, item?.answer, item?.id, item?.unit_id, i)" value="{{item.b}}">b. {{item?.b}}</ion-radio><br />
+                  </ion-col>
+              </ion-radio-group>
+              </ion-row>
+            </ion-grid>
+          </div>
+      </form>
+    </div>
+  </ng-container>   
+
+  <ion-card *ngIf="showNotice" class="warning ion-padding" color="danger">
+    There is currently no questions at the moment!
+  </ion-card>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

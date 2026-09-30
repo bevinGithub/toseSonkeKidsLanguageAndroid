@@ -1,0 +1,112 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: 'Poppins Regular';
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+}
+
+.icon-image {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.language {
+  position: absolute;
+  top: 30px
+}
+
+h5 {
+  font-size: 18px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+}
+
+.maroontext img {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.maroontext {
+  font-size: 14px;
+  font-family: 'Poppins SemiBold';
+  color: #6D1330;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+ion-item {
+  border: 1px solid #eee;
+  border-radius: 30px;
+}
+
+.input-fill-outline.sc-ion-input-md-h {
+  min-height: 55px;
+}
+
+.inputField {
+  margin-bottom: 15px;
+}
+
+.wordsList {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+ion-card {
+  box-shadow: none;
+  border: 1px solid #eee;
+}
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+h5 {
+  font-size: 18px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+}
+
+.wordEn,
+.wordSh {
+  display: block !important;
+}
+
+.wordSh {
+  font-size: 18px;
+  font-family: 'Poppins SemiBold';
+  color: #AF8648
+}
+
+.wordEn {
+  font-size: 14px;
+  font-family: 'Poppins Italic';
+  color: #6D1330
+}
+
+.usageContent {
+  font-family: 'Poppins Regular';
+}

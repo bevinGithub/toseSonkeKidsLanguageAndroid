@@ -1,0 +1,86 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+	font-size: 16px;
+}
+
+.brownText {
+  color: #AF8648;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-family: 'Poppins Regular',
+}
+
+.maroonText {
+  color: #6D1330;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Poppins Light';
+}
+
+.inputField {
+  margin-bottom: 15px;
+}
+
+ion-input, ion-textarea {
+  font-family: 'Poppins Regular';
+  font-size: 12px;
+  --border-width: 2px;
+}
+
+
+ion-label {
+  font-family: 'Poppins SemiBold';
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins Medium';
+  margin-bottom: 20px;
+}
+
+.btnText {
+  color: #313131 !important;
+  text-transform: initial !important;
+}
+
+.error-msg {
+  font-size: 12px;
+  font-family: 'Poppins Regular';
+  color: #fe0000;
+  text-align: left;
+  display: block;
+  padding-left: 10px;
+  margin-bottom: 6px;
+}
+
+.greenBtn {
+  border-radius: 30px;
+  background: rgb(13,65,52);
+  background: linear-gradient(180deg, rgba(13,65,52,1) 0%, rgba(23,113,91,0.9389005602240896) 0%, rgba(13,65,31,1) 100%);
+}
+
+.maroonBtn {
+  border-radius: 30px;
+  background: rgb(13,65,52);
+  background: linear-gradient(180deg, rgba(13,65,52,1) 0%, rgba(172,16,69,0.9304971988795518) 0%, rgba(13,65,31,1) 100%);
+}
+
+.hidden-input {
+  display: none;
+}

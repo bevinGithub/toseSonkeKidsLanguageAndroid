@@ -1,0 +1,30 @@
+<!-- <div class="flip-container" (click)="flip()" [class.flipped]="flipped">
+  <div class="flipper">
+    <div class="front">
+      <ng-content select=".flash-card-front"></ng-content>
+    </div>
+
+    <div *ngIf="showBackCard" class="back ion-padding">
+      <ng-content select=".flash-card-back"></ng-content>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="flip-container" (click)="flip()" [class.flipped]="flipped">
+  <div class="flipper">
+    <div class="front">
+      <ng-content select=".flash-card-front"></ng-content>
+    </div>
+
+    <div *ngIf="showBackCard" class="back ion-padding">
+      <ng-content select=".flash-card-back"></ng-content>
+        <!-- <div class="close">
+          <ion-button  (click)="closeBack()" color="primary">
+            Close
+          </ion-button>
+        </div> -->
+    </div>
+  </div>
+</div>

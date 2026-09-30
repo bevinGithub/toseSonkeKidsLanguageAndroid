@@ -1,0 +1,30 @@
+<ion-header class="headerBg ion-no-border" color="light">
+
+  <ion-toolbar color="light">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">Profile Avatars</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-grid fixed>
+    <ion-row>
+      <ng-container *ngFor="let item of avatars">
+        <ion-col size="4" (click)="addAvatarProfile({ avatar: item?.avatar })">
+          <img src="assets/img/avatars/{{item?.avatar}}" alt="">
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

@@ -1,0 +1,118 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]=" unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="tapLearn ion-text-center">
+    <h5 color="secondary">Tap and Learn</h5>
+  </div>
+
+  <ng-container *ngIf="connection">
+    <div class="wordsList">
+      <div class="tapList ion-padding" *ngIf="tapLessons !== 'empty'">
+        <ng-container *ngFor="let item of tapLessons; let i = 'index + 1'">
+          <div id="{{i}}" class="data">
+            <app-flipcard>
+
+              <div class="flash-card-front ion-text-center">
+                  <img class="number" src="{{imagePath}}tap_uploads/{{item?.tap_image}}" alt="">
+              </div>
+
+              <div class="flash-card-back">
+                <div class="imageContainer ion-text-center">
+                  <img class="number" src="{{imagePath}}tap_uploads/{{item?.tap_image}}" alt="">
+                </div>
+                <span class="wordSh">
+                  {{i}}. {{item?.word_sh}}
+                </span>
+                <span class="wordEn">
+                  {{item?.word_en}}
+                </span>
+                <span class="audio"  *ngIf="record?.id !== item?.id">
+                  <img *ngIf="!isPlaying && record?.id !== item?.id"  (click)="playAudio({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="isPlaying && record?.id !== item?.id"  (click)="playAudio({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="isPlaying && record?.id === item?.id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                  Listen to pronunciation
+                </span>
+                <span class="audio"  *ngIf="record?.id === item?.id">
+                  <img *ngIf="!isPlaying && record?.id !== item?.id"  (click)="playAudio({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="!isPlaying && record?.id === item?.id"  (click)="playAudio({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="isPlaying && record?.id === item?.id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                  Listen to pronunciation  <span *ngIf="isPlaying && record?.id === item?.id" class="text" style="color: #21C1C1;">Playing...</span>
+                </span>
+              </div>
+              
+              <div class="sep" style="clear: both;">
+                &nbsp;
+              </div>
+            </app-flipcard>
+          </div>
+        </ng-container>
+      </div>
+    </div>    
+  </ng-container>
+
+  <!-- OFFLINE SECTION -->
+  <ng-container *ngIf="!connection">
+    
+    <div class="offlineClass ion-text-center">You are currently offline.</div>
+
+    <div class="wordsList">
+      <div class="tapList ion-padding" *ngIf="tapLessonsOffline?.length > 0">
+        <ng-container *ngFor="let item of tapLessonsOffline; let i = 'index + 1'">
+          <div id="{{i}}" class="data">
+            <app-flipcard>
+
+              <div class="flash-card-front ion-text-center">
+                  <img class="number" src="{{item?.tap_image_offline}}" alt="">
+              </div>
+
+              <div class="flash-card-back">
+                <div class="imageContainer ion-text-center">
+                  <img class="number" src="{{item?.tap_image_offline}}" alt="">
+                </div>
+                <span class="wordSh">
+                  {{i}}. {{item?.word_sh}}
+                </span>
+                <span class="wordEn">
+                  {{item?.word_en}}
+                </span>
+                <span class="audio"  *ngIf="record?.mysql_id !== item?.mysql_id">
+                  <img *ngIf="!isPlaying && record?.mysql_id !== item?.mysql_id"  (click)="playAudioOnDevice({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="isPlaying && record?.mysql_id !== item?.mysql_id"  (click)="playAudioOnDevice({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="isPlaying && record?.mysql_id === item?.mysql_id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                  Listen to pronunciation
+                </span>
+                <span class="audio"  *ngIf="record?.mysql_id === item?.mysql_id">
+                  <img *ngIf="!isPlaying && record?.mysql_id !== item?.mysql_id"  (click)="playAudioOnDevice({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="!isPlaying && record?.mysql_id === item?.mysql_id"  (click)="playAudioOnDevice({  audio: item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                  <img *ngIf="isPlaying && record?.mysql_id === item?.mysql_id"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+                  Listen to pronunciation  <span *ngIf="isPlaying && record?.mysql_id === item?.mysql_id" class="text" style="color: #21C1C1;">Playing...</span>
+                </span>
+              </div>
+              
+              <div class="sep" style="clear: both;">
+                &nbsp;
+              </div>
+            </app-flipcard>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

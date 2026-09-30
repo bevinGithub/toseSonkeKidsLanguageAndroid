@@ -1,0 +1,122 @@
+.home-bg {
+  background-image: url('../../../assets/img/home-banner.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 500px;
+}
+
+.hide-toolbar {
+  display: none;
+}
+
+.home-logo {
+  text-align: center;
+  padding-top: 60px;
+  margin-bottom: -22px;
+}
+
+.tagline {
+  color: #0D4134;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-family: 'Poppins Bold'
+}
+
+.brownText {
+  color: #AF8648;
+  display: block;
+  margin-bottom: 0px;
+  font-size: 21px;
+  font-family: 'Poppins Medium',
+}
+
+.maroonText {
+  color: #6D1330;
+  display: block;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-family: 'Poppins Light',
+}
+
+.home-image {
+  margin-bottom: 15px;
+}
+
+.terms {
+  color: #21C1C1;
+  margin-bottom: 0px;
+  font-size: 13px;
+  font-family: 'Poppins SemiBold',
+}
+
+.termsGreen {
+  color: #FB447C;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Poppins SemiBold',
+}
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins Medium';
+  margin-bottom: 20px;
+  border-width: 2px;
+  border-color: #ffffff;
+}
+
+.getStartedBtn {
+  border-radius: 30px;
+  background: #21C1C1;
+  border-color: #ffffff;
+  border-width: 2px;
+}
+
+.gotAccountBtn {
+  border-radius: 30px;
+  background: #FB447C;
+  border-color: #ffffff;
+  border-width: 2px;
+}
+
+.spacer  {
+  height: 25px;
+  margin-bottom: 25px;
+}
+
+.mySwiper {
+  display: block;
+  position: relative;
+}
+
+.slide img {
+  width: 100% !important;
+}
+
+@media screen and (min-width : 365px) and (max-width: 410px) {
+  .home-bg {
+    height: 585px !important;
+  }
+  .home-logo {
+    margin-bottom: 1px;
+  }
+}
+
+@media screen and (min-width : 411px) and (max-width: 576px) {
+  .home-bg {
+    height: 590px !important;
+  }
+  .slide-3, .slide {
+    width: 100% !important;
+  }
+  .terms {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width : 576px) and (max-width: 760px) {
+
+}
+
+@media screen and (min-width : 768px) and (max-width: 1024px) {
+
+}
+

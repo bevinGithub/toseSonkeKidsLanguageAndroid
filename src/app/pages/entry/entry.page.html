@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="hide-toolbar">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-logo">
+    <img src="assets/img/inner-header.svg" alt="">
+  </div>
+  <div class="ion-text-center tagline">
+    Get Started<br>
+    <span class="orangeText">and speak Shona & Ndebele with Us!</span>
+  </div>
+
+
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col size="6" routerLink="/signup">
+        <img src="assets/img/sign-up.svg" alt="">
+      </ion-col>
+      <ion-col size="6" routerLink="/guest-signin">
+        <img src="assets/img/guest-signup.svg" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="orangeText ion-text-center">Already have an account?</div>
+
+  <div class="pinkText ion-text-center" routerLink="/signin">
+    Sign-in here <img src="assets/img/arrow.svg" alt="">
+  </div>
+
+  <div class="ion-text-center1 ion-padding btn-container">
+
+    <ion-button fill="outline" expand="block" color="dark" shape="round" class="btn" (click)="googleLogin()">
+      <span class="gIcon"><img st src="assets/img/google.svg" alt=""></span> <span class="btnText">Continue with Google</span>
+    </ion-button>
+
+    <ion-button fill="outline" expand="block" color="dark" shape="round" class="btn" (click)="facebookLogin()">
+      <span class="gIcon"><img st src="assets/img/fb.svg" alt=""></span> <span class="btnText">Continue with Facebook</span>
+    </ion-button>
+<!-- 
+    <ion-button fill="outline" expand="block" color="dark" shape="round" class="btn" (click)="appleLogin()">
+      <span class="gIcon"><img st src="assets/img/apple.svg" alt=""></span> <span class="btnText">Continue with Apple</span>
+    </ion-button> -->
+
+  </div>
+
+</ion-content>

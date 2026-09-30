@@ -1,0 +1,153 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+.offlineClass {
+  // display: none
+}
+
+// BUTTON HEIGHT RESIZE
+.input-fill-outline.sc-ion-input-md-h {
+	min-height: 46px;
+}
+
+.hideField, .hidden-input {
+  display: none !important;
+}
+
+.title-text {
+  text-transform: uppercase;
+}
+
+.headerBg {
+  height: 110px !important;
+}
+
+.title-default {
+  width: 85%;
+  color: #21C1C1 !important
+}
+
+// icon colors
+ion-icon.red-app {
+  color: #F4647C !important;
+}
+ion-icon.yellow-app {
+  color: #F7C66F !important;
+}
+ion-icon.light-brown-app {
+  color: #D4CAC2 !important
+}
+ion-icon.light-green-app {
+  color: #59A5A5 !important
+}
+ion-icon.dark-green-app {
+  color: #0D4134 !important
+}
+ion-icon.brown-app {
+  color: #AF8648 !important
+}
+ion-icon.maroon-app {
+  color: #6D1330 !important
+}
+
+
+.red-app {
+  color: #F4647C !important;
+}
+.yellow-app {
+  color: #F7C66F !important;
+}
+.light-brown-app {
+  color: #D4CAC2 !important
+}
+.light-green-app {
+  color: #59A5A5 !important
+}
+.dark-green-app {
+  color: #0D4134 !important
+}
+.brown-app {
+  color: #AF8648 !important
+}
+.maroon-app {
+  color: #6D1330 !important
+}
+//footer
+ion-footer {
+  // margin-bottom: 25px;
+  background-color: #fff !important;
+}
+
+.guest-footer .line img {
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+.maroonBtnFooter {
+  border-radius: 30px;
+  background: rgb(13,65,52);
+  background: linear-gradient(180deg, rgba(13,65,52,1) 0%, rgba(172,16,69,0.9304971988795518) 0%, rgba(13,65,31,1) 100%);
+}
+
+ion-alert, .alert-title {
+  font-size: 16px !important;
+  font-family: 'Poppins Semibold' !important;
+}
+
+.alert-message {
+  font-size: 14px !important;
+  font-family: 'Poppins Regular' !important;
+}
+
+.toastStyle {
+  height: 80px !important;
+}
+
+.correct {
+  color: #ffffff !important;
+}
+
+.wrong {
+  color: #ffffff !important;
+}
+
+@media screen and (min-width : 768px) and (max-width: 1024px) {
+	.headerBg {
+	  height: 165px !important;
+	}
+}

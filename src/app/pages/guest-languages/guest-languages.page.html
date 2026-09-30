@@ -1,0 +1,31 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">LANGUAGES</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="maroontext ion-text-center">
+    Choose your language
+  </div>
+
+  <ion-card *ngFor="let item of languages">
+    <ion-card-content class="ion-text-left card-content" (click)="selectLanguage({ lan: item?.id });">
+      <img class="icon-image" src="assets/img/{{ item?.icon }}" alt="English Language">
+      <span class="language">{{ item?.language }}</span>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer></app-guest-footer>
+</ion-footer>
+

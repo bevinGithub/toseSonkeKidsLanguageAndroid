@@ -1,0 +1,85 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]=" unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="tapLearn ion-text-center">
+    <h5 color="secondary">Tap and Learn</h5>
+  </div>
+
+  <div class="wordsList">
+
+    <!-- TAP & LEARN LIST -->
+    <div class="tapList ion-padding" *ngIf="tapLessons !== 'empty'">
+      <ng-container *ngFor="let item of tapLessons; let i = 'index + 1'">
+        <div id="{{i}}" class="data">
+          <app-guest-flipcard>
+
+            <div class="flash-card-front ion-text-center">
+              <img class="number" src="{{imagePath}}tap_uploads/{{item?.tap_image}}" alt="">
+            </div>
+
+            <div class="flash-card-back">
+              <div class="imageContainer ion-text-center">
+                <img class="number" src="{{imagePath}}tap_uploads/{{item?.tap_image}}" alt="">
+              </div>
+              <span class="wordSh">
+                {{i}}. {{item?.word_sh}}
+              </span>
+              <span class="wordEn">
+                {{item?.word_en}}
+              </span>
+              <span class="audio" *ngIf="record?.id !== item?.id">
+                <img *ngIf="!isPlaying && record?.id !== item?.id" (click)="playAudio({  audio: item })"
+                  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                <img *ngIf="isPlaying && record?.id !== item?.id" (click)="playAudio({  audio: item })"
+                  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                <img *ngIf="isPlaying && record?.id === item?.id" (click)="stopAudio()"
+                  class="audio-img" src="assets/img/units/playing.svg" alt="">
+                Listen to pronunciation
+              </span>
+              <span class="audio" *ngIf="record?.id === item?.id">
+                <img *ngIf="!isPlaying && record?.id !== item?.id" (click)="playAudio({  audio: item })"
+                  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                <img *ngIf="!isPlaying && record?.id === item?.id" (click)="playAudio({  audio: item })"
+                  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                <img *ngIf="isPlaying && record?.id === item?.id" (click)="stopAudio()"
+                  class="audio-img" src="assets/img/units/playing.svg" alt="">
+                Listen to pronunciation <span *ngIf="isPlaying && record?.id === item?.id" class="text"
+                  style="color: #21C1C1;">Playing...</span>
+              </span>
+            </div>
+
+            <div class="sep" style="clear: both;">
+              &nbsp;
+            </div>
+          </app-guest-flipcard>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="ion-padding"></div>
+    <div class="pronunciation">
+      <ion-card class="ion-padding ion-text-center" routerLink="/guest-flip-learn/{{unit?.id}}">
+        Next <ion-icon size="large" name="arrow-forward-circle" class="{{iconColor}}-app"></ion-icon>
+      </ion-card>
+    </div>
+
+  </div>
+
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer></app-guest-footer>
+</ion-footer>

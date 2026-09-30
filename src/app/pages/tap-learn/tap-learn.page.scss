@@ -1,0 +1,158 @@
+.headerBg {
+  height: 88px;
+  background: url("../../../assets/img/toolbar.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ion-toolbar {
+  width: 100%;
+  font-family: "Poppins SemiBold";
+}
+
+.title-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: "Poppins Regular";
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+h5 {
+  font-size: 18px;
+  font-family: "Poppins SemiBold";
+  display: block;
+  color: #6d1330;
+}
+
+.wordEn,
+.wordSh {
+  display: block !important;
+}
+
+.wordSh {
+  font-size: 18px;
+  font-family: "Poppins SemiBold";
+  color: #af8648;
+}
+
+.wordEn {
+  font-size: 14px;
+  font-family: "Poppins Italic";
+  color: #6d1330;
+}
+
+.audio {
+  display: inline-block;
+  color: #707070;
+  font-size: 14px;
+  font-family: "Poppins Regular";
+}
+
+.audio span {
+  color: #707070;
+  font-size: 12px;
+  font-family: "Poppins Regular";
+}
+
+.audio img {
+  position: relative;
+  top: 6px;
+  margin-right: 5px;
+}
+
+.usageContent {
+  font-family: "Poppins Regular";
+}
+
+.audio-img {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: -2px;
+}
+
+.usageContent > table > td,
+table th {
+  padding: 5px !important;
+}
+
+ion-icon {
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+  left: -2px;
+}
+
+.alignText {
+  color: #707070;
+  font-size: 12px;
+  font-family: "Poppins Regular";
+  position: relative;
+  top: -5px;
+}
+
+.text {
+  font-size: 10px;
+  color: #21c1c1;
+  font-family: "Poppins SemiBold";
+}
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+h5 {
+  font-size: 18px;
+  font-family: "Poppins SemiBold";
+  display: block;
+  color: #a85a46;
+}
+
+.wordEn,
+.wordSh {
+  display: block !important;
+}
+
+.wordSh {
+  font-size: 18px;
+  font-family: "Poppins SemiBold";
+  color: #a85a46;
+}
+
+.wordEn {
+  font-size: 14px;
+  font-family: "Poppins Italic";
+  color: #21c1c1;
+}
+
+.usageContent {
+  font-family: "Poppins Regular";
+}
+
+.flash-card-front,
+.flash-card-back {
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.number {
+  height: 100px;
+}
+
+.text {
+  font-size: 10px;
+  color: #21c1c1;
+  font-family: "Poppins SemiBold";
+}

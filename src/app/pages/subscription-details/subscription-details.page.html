@@ -1,0 +1,135 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">Subscription Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid fixed>
+    <ion-row class="ion-border">
+      <ion-col size="4" class="left">
+        Full Name
+      </ion-col>
+      <ion-col size="8" class="right">
+        <span class="user">{{user?.name}} {{user?.surname}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-border">
+      <ion-col size="4" class="left">
+        Email
+      </ion-col>
+      <ion-col size="8" class="right">
+        <span class="user">{{user?.email}} </span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-border">
+      <ion-col size="4" class="left">
+        Subscription
+      </ion-col>
+      <ion-col size="8" class="right">
+        <span class="user">{{user?.plan_type}} </span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-border" *ngIf="user?.head_count > 1 && user?.parentID === null">
+      <ion-col size="4" class="left">
+        Remaining
+      </ion-col>
+      <ion-col size="8" class="right">
+        <span class="user">{{remaining}} </span>
+        <span style="position: relative; left: 10px;" *ngIf="remaining > 0 && user?.subscriptionActive === 'Active'" class="addMember" routerLink="/add-member">Add Member</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-border" *ngIf="user?.head_count === 1">
+      <ion-col size="4" class="left">
+        Standard
+      </ion-col>
+      <ion-col size="8" class="right">
+        <span class="user">{{user?.head_count}} </span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-border-last">
+      <ion-col size="4" class="left">
+        Status
+      </ion-col>
+      <ion-col size="8" class="right">
+        <span *ngIf="user?.subscriptionActive === 'Active'" class="user">{{user?.subscriptionActive}} </span>
+        <span *ngIf="user?.subscriptionActive === null" class="user">No Subscription</span>
+        <span *ngIf="user?.subscriptionActive === 'Cancelled'" class="user">Inactive</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="members" *ngIf="members !== 'empty'">
+    <h5>Family Member(s)</h5>
+    <ng-container *ngFor="let member of members">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3" class="left">Full Name: </ion-col>
+          <ion-col size="9" class="right">{{ member?.name }} {{ member?.surname }}</ion-col>
+
+          <ion-col size="3" class="left">Email: </ion-col>
+          <ion-col size="9" class="right">{{ member?.email }}</ion-col>
+          <ion-col size="12" class="right" (click)="removeMember({ memberID: member?.id })">
+            <ion-icon style="font-size: 20px;" name="trash-outline" color="danger"></ion-icon>
+            <span style="position: relative; top: -5px; left: 10px;" class="delete">
+              Delete Member
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ng-container>
+  </div>
+
+
+
+
+  <ion-grid *ngIf="user?.parentID === null">
+
+    <ion-row *ngIf="user?.subscriptionActive === 'Active'">
+      <ion-col size="12">
+        <ion-button class="Btn" expand="block" shape="round" color="primary" (click)="changeSubscriptionAlertConfirm({userId: user?.id})">Change Subscription</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="user?.subscriptionActive !== 'Active' || user?.subscriptionActive === 'Cancelled'" >
+      <ion-col size="12">
+        <ion-button class="Btn" expand="block" shape="round" color="primary" routerLink="/user-menu/plans">Subscription Plans</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="user?.subscriptionActive === 'Active' && user?.paymentSource === 'PayPal'">
+      <ion-col size="12">
+        <ion-button class="" expand="block" shape="round" color="dark" fill="outline" (click)="cancellationPayPalAlertConfirm({userId: user?.id})" >Cancel PayPal Subscription</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="user?.subscriptionActive === 'Active' && user?.paymentSource === 'Google'">
+      <ion-col size="12">
+        <ion-button class="" expand="block" shape="round" color="dark" fill="outline" (click)="cancellationGoogleAlertConfirm({userId: user?.id})" >Cancel Google Subscription</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button class="" expand="block" shape="round" color="dark" fill="outline" (click)="deleteAccountAlertConfirm({userId: user?.id})" >Delete Account</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

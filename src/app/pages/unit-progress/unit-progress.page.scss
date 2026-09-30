@@ -1,0 +1,45 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+	font-size: 16px;
+  text-transform: uppercase;
+}
+
+
+.chart-legend .legend-labels {
+	background: #ffffff !important;
+}
+
+.subTitle {
+  font-size: 18px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #6D1330;
+}
+
+.subTitleText {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #0D4134;
+}
+
+.percentageText {
+  font-size: 15px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #FE0000;
+}

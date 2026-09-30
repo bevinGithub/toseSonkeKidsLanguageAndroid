@@ -1,0 +1,81 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">CONTACT US</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <div class="form-container ion-padding" >
+    <form #f="ngForm">
+
+      <div class="inputField">
+        <ion-label>Name</ion-label>
+        <ion-input class="input" fill="outline" color="medium" shape="round" type="text" [(ngModel)]="services.first_name" name="first_name" placeholder="Name" autocapitalize="one" required #firstName="ngModel"> </ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="firstName.valid && firstName.touched">
+          <span class="error-msg">Name Cannot be empty!</span>
+        </div>
+      </div>
+
+      <div class="inputField">
+        <ion-label>Surname</ion-label>
+        <ion-input class="input" fill="outline" color="medium" shape="round" type="text"
+        [(ngModel)]="services.last_name" name="last_name" placeholder="Surname" autocapitalize="one" required #lastName="ngModel">
+        </ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="lastName.valid && lastName.touched">
+          <span class="error-msg">Surname Cannot be empty!</span>
+        </div>
+      </div>
+
+      <div class="inputField">
+        <ion-label>Email</ion-label>
+        <ion-input class="input" fill="outline" color="medium" shape="round" type="email"
+         [(ngModel)]="services.email" name="email" placeholder="Email Address" autocapitalize="one" required #userEmail="ngModel">
+        </ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="userEmail.valid && userEmail.touched">
+          <span class="error-msg">Invalid email address!</span>
+        </div>
+      </div>
+
+      <div class="inputField">
+        <ion-label>Mobile Number</ion-label>
+        <ion-input class="input" fill="outline" color="medium" shape="round" type="tel" [(ngModel)]="services.phone_number" name="phone_number" placeholder="Contact Number (Country Code + Cell No.)"  minlength="10" required #phoneNumber="ngModel">
+        </ion-input>
+
+        <div lines="none" class="list-bg-trans" *ngIf="!phoneNumber.valid && phoneNumber.touched">
+          <span class="error-msg">Invalid mobile!</span>
+        </div>
+      </div>
+
+      <div class="inputField">
+        <ion-label>Message</ion-label>
+        <ion-textarea fill="outline" shape="round" label="" labelPlacement="floating"[(ngModel)]="services.enquiry_message" name="enquiry_message" rows="6" cols="80" placeholder="Message (required)" autocapitalize="on" required minlength="5" #messageCtrl="ngModel"></ion-textarea>
+
+        <div lines="none" class="list-bg-trans"  *ngIf="!messageCtrl.valid && messageCtrl.touched">
+          <span class="error-msg">Message should be aleast 5 characters!</span>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <ion-input class="hidden-input" [(ngModel)]="services.ID" name="ID" placeholder="" type="text"></ion-input>
+        <ion-button shape="round" expand="full" color="secondary" block (click)="submitEnquiry()" [disabled]="!f.valid">send message</ion-button>
+      </div>
+    </form>
+
+  </div>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

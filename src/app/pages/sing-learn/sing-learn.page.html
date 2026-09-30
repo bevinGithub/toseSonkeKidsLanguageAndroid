@@ -1,0 +1,65 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]=" unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="tapLearn ion-text-center">
+    <h5 color="secondary">Sing & Learn</h5>
+  </div>
+
+  <div class="audiosList" *ngIf="connected">
+    <ng-container class="tapList" *ngFor="let item of audios; let i = 'index + 1'">
+      <ion-grid class="ion-no-padding padding_L_R">
+        <ion-row class="ion-no-padding">
+          <ion-col size="1">
+            <ng-container *ngIf="item?.audio_file !== ''">
+              <span class="audio">
+                <img *ngIf="!isPlaying"  (click)="playAudio({ item })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                <img *ngIf="isPlaying"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+              </span>
+             </ng-container>
+          </ion-col>
+          <ion-col class="audioTitle" size="11" class="ion-no-padding" style="padding-left: 6px;">
+            {{item?.audio_title}} <span *ngIf="isPlaying && record_id === item?.id" class="text">Playing...</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ng-container>
+  </div>
+
+  <!-- OFFLINE SECTION -->
+  <div class="audiosList" *ngIf="!connected">
+    <ng-container class="tapList" *ngFor="let item of audios; let i = 'index + 1'">
+      <ion-grid class="ion-no-padding padding_L_R">
+        <ion-row class="ion-no-padding">
+          <ion-col size="1">
+            <ng-container *ngIf="item?.audio_file_offline !== ''">
+              <span class="audio">
+                <img *ngIf="!isPlaying"  (click)="playAudioOnDevice({ audio: item  })"  class="audio-img" src="assets/img/units/play-icon.svg" alt="">
+                <img *ngIf="isPlaying"  (click)="stopAudio()" class="audio-img" src="assets/img/units/playing.svg" alt="">
+              </span>
+             </ng-container>
+          </ion-col>
+          <ion-col class="audioTitle" size="11" class="ion-no-padding" style="padding-left: 6px;">
+            {{item?.audio_title}} <span *ngIf="isPlaying && record_id === item?.mysql_id" class="text">Playing...</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ng-container>
+  </div>  
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

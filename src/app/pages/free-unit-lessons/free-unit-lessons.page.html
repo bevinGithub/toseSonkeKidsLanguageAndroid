@@ -1,0 +1,59 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1" class="ion-text-center">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text" [innerHTML]=" unit?.unit_title"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="unitContainer">
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size="3"> &nbsp;</ion-col>
+
+        <ion-col size="6" (click)="viewVideo({ unit: unit })">
+          <img src="assets/img/intro-video-button.svg" alt="">
+        </ion-col>
+
+        <ion-col size="3"> &nbsp;</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="unitContent ion-padding ion-text-center">
+      <span class="desc">{{ unit?.unit_description }}</span>
+      <span class="objectives">{{ unit?.unit_objectives }}</span>
+    </div>
+  </div>
+
+  <div class="lessonsContainer">
+    <ng-container *ngFor="let item of lessons">
+      <ion-card class="ion-padding" (click)="viewLesson({lesson: item, iconColor: unit?.icon_name })">
+        <div class="icon-section">
+          <img src="assets/img/units/{{iconName}}" alt="">
+        </div>
+        <div class="unit-section">
+          <span class="lessonNumber textGreen" *ngIf="item?.lesson_state === 'Completed'">{{item?.lesson_number}}</span>
+          <span class="lessonNumber" *ngIf="item?.lesson_state === 'Active'">{{item?.lesson_number}}</span>
+          <span class="lessonTitle">{{item?.lesson_title}}</span>
+        </div>
+      </ion-card>
+    </ng-container>
+  </div>
+
+  <div class="error" *ngIf="emptyNotice">
+    <ion-card class="ion-padding ion-text-center" color="danger">
+      <span class="errMsg">There are no lessons in this unit!</span>
+    </ion-card>
+  </div>
+</ion-content>
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-footer> </app-footer>
+</ion-footer>
+

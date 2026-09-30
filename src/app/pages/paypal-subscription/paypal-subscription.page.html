@@ -1,0 +1,40 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">SUBSCRIPTION</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="maroontext ion-text-center">
+    Subscription Plans
+  </div>
+
+  <form #f='ngForm' class="forms">
+
+    <div class="inputField">
+      <ion-item>
+          <ion-select [(ngModel)]="paypal.planID" name="planID"  label="Plan" placeholder="Select" required>
+          <ion-select-option  *ngFor="let item of plans" value="{{item?.id}}">{{item?.title}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="hideField">
+        <ion-input class="input" fill="outline" color="medium" shape="round" [(ngModel)]="paypal.userID" name="userID" type="text" placeholder="UserID"></ion-input>
+      </div>
+    </div>
+
+    <ion-button expand="block" fill="solid" shape="round" (click)="paypalCheckout()" [disabled]="!f.valid "
+      color="primary1" class="maroonBtn"> <span>Proceed to PayPal</span>
+    </ion-button>
+
+  </form>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

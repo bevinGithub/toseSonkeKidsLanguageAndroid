@@ -1,0 +1,35 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">SUBSCRIPTION</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <div class="maroontext ion-text-center">
+    Payment and Billing Options
+  </div>
+
+  <div class="payments">
+    <div class="paypal" *ngIf="paymentType === 'PayPal' && userState?.subscriptionActive === 'Active'">
+      <img *ngIf="userId" src="assets/img/payments/paypal-2.svg" (click)="paypalCheckout( {userID: userId}, {'planID': planId} )">
+    </div>
+
+    <div class="gPay" *ngIf="paymentType === 'Google' && userState?.subscriptionActive === 'Active'">
+      <div routerLink="/google-pay-upgrade/{{planId}}">
+        <img  src="assets/img/payments/gPay-2.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

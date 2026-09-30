@@ -1,0 +1,24 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">Intro Video</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<div class="playerContainer">
+    <div class="iFrame" *ngIf="videoPath">
+    <iframe width="100%" height="400" [src]="videoPath" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+</ion-content>
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer></app-guest-footer>
+</ion-footer>

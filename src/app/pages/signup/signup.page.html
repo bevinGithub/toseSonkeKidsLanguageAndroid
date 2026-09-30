@@ -1,0 +1,103 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="hide-toolbar">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-logo">
+    <img src="assets/img/inner-header.svg" alt="">
+  </div>
+  <div class="ion-text-center tagline">
+    Sign-Up<br>
+    <span class="orangeText">and speak Shona & Ndebele with Us!</span>
+  </div>
+
+  <div class="form-container ion-padding">
+    <form #f='ngForm' class="forms">
+      <ion-list>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.name" name="name" type="text" placeholder="Name"  autocapitalize="words" minlength="3"  #nameCtrl="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!nameCtrl.valid && nameCtrl.touched">
+          <span class="error-msg">Name should be at least a minimum of 3 characters!</span>
+        </div>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.surname" name="surname" type="text" placeholder="Surname" autocapitalize="words" minlength="3"  #surnameCtrl="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!surnameCtrl.valid && surnameCtrl.touched">
+          <span class="error-msg">Surname should be at least a minimum of 3 characters!</span>
+        </div>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.email" name="email" type="email" placeholder="Email Address" (ionBlur)="checkEmail()" #emailCtrl="ngModel" [email]="true"></ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!validEmail  && emailCtrl.touched">
+          <span class="error-msg">Please provide a valid email address</span>
+        </div>
+
+        <ion-item>
+          <ion-input [(ngModel)]="user.mobile_number" name="mobile_number" type="tel" placeholder="Cell Number (Country Code + Cell No.)" type="tel" minlength="10" #phone="ngModel"></ion-input>
+        </ion-item>
+
+        <div  lines="none" class="list-bg-trans" *ngIf="!phone.valid && phone.touched">
+          <span class="error-msg">Invalid mobile number, please check your mobile number!</span>
+        </div>
+
+        <ion-item>
+          <ion-icon slot="end" color="dark" name="eye-outline" (click)="showPasswordRegister()"></ion-icon>
+          <ion-input [(ngModel)]="user.password" name="password" type="{{ type1 }}" placeholder="Password" minlength="6" #passwordCtrl="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <div class="list-bg-trans" *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+          <span class="error-msg">Password must be at least 6 characters!</span>
+        </div>
+
+        <ion-item>
+          <ion-icon slot="end" color="dark" name="eye-outline" (click)="showPasswordRegisterConfirm()"></ion-icon>
+          <ion-input [(ngModel)]="user.confirm_password" name="confirm_password" (ionBlur)="checkPassword()"  type="{{ type2 }}" placeholder="Confirm Password" #passwordCtrl2="ngModel"></ion-input>
+        </ion-item>
+
+        <div class="list-bg-trans" *ngIf="password !== confirmPassword">
+          <span class="error-msg">Password do not match!</span>
+        </div>
+
+        <div class="list-bg-trans" *ngIf="!passwordCtrl2.valid && passwordCtrl2.touched">
+          <span class="error-msg">Confirm Password cannot be empty!</span>
+        </div>
+
+        <div class="line ion-text-center">
+          <img src="assets/img/line-seperator.svg" alt="">
+        </div>
+
+        <div class="terms ion-text-center">
+          By continuing you confirm that you agree to the <br><span class="termsPink" routerLink="/terms"> Terms of Use</span> and <span
+          class="termsPink" routerLink="/policy">Privacy Policy</span>
+        </div>
+
+      </ion-list>
+      <ion-input class="hidden-input" [(ngModel)]="user.device_id" name="device_id" placeholder="Device ID" type="text"></ion-input>
+      <ion-button expand="block" fill="solid" shape="round" (click)="userSignUp()" [disabled]="!f.valid || !validPassword || !validEmail" color="primary1" class="signBtn">
+        <span>SIGN-UP</span>
+      </ion-button>
+
+      <div class="terms ion-text-center">
+        Already have an account? <span class="termsPink" routerLink="/signin">Sign-in here.</span>
+      </div>
+
+      <div class="line ion-text-center">
+        <img src="assets/img/line-seperator.svg" alt="">
+      </div>
+    </form>
+  </div>
+
+
+</ion-content>

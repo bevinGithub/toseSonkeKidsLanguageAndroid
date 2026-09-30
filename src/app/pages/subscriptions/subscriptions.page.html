@@ -1,0 +1,55 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">SUBSCRIPTION</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <div class="maroontext ion-text-center">
+    Payment and Billing
+  </div>
+
+  <div class="greenText ion-text-center">
+    <span class="subTitle">
+      Monthly or Annually for:
+    </span>
+    <span class="subText">
+      Standard Subscription<br>
+      Family Subscription for 2 Members<br>
+      Family Subscription for up to 5 members
+    </span>
+  </div>
+
+  <div class="paypal ion-text-center ion-padding">
+    <div class="subBtnText">
+      Credit/Debit Card: Integrated in PayPal
+    </div>
+    <img src="assets/img/payments/paypal.svg" alt="">
+
+    <ion-button expand="block" fill="solid" shape="round"color="primary1" class="maroonBtn" routerLink="/paypal-subscription">
+      <span>SUBSCRIBE WITH PAYPAL</span>
+    </ion-button>
+  </div>
+
+  <div class="googlepal ion-text-center ion-padding">
+    <div class="subBtnText">
+      Google Pay Integration
+    </div>
+    <img src="assets/img/payments/google-pay.svg" alt="">
+
+    <ion-button expand="block" fill="solid" shape="round" color="primary1" class="maroonBtn" routerLink="/google-pay-subscription">
+        <span>SUBSCRIBE WITH GOOGLE PAY</span>
+      </ion-button>
+  </div>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

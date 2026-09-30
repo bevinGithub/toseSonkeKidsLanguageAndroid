@@ -1,0 +1,74 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+}
+
+h5 {
+  font-family: 'Poppins Regular';
+  font-size: 14px;
+}
+
+.left {
+  width: 32% !important;
+  float: left;
+  float: right !important;
+  font-size: 12px;
+  color: #000;
+  font-family: "Poppins SemiBold";
+  font-weight: 300;
+}
+
+.right {
+  display: block;
+  float: right !important;
+  font-size: 12px;
+  color: #000;
+  font-family: "Poppins Light";
+  font-weight: 300;
+  text-align: left;
+}
+
+.ion-border {
+  border-bottom: 2px solid #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ion-border-last {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ion-grid {
+  border: 2px solid #eeeeee; margin-top: 15px; margin-bottom: 15px; border-radius: 6px
+}
+
+.left-right-padding-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins Medium';
+  // margin-bottom: 20px;
+}
+
+.addMember, .delete{
+  font-family: 'Poppins SemiBold';
+  font-size: 12px;
+  color: #21C1C1;
+}
+

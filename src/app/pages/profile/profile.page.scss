@@ -1,0 +1,192 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+}
+
+.profilePhoto {
+  border-radius: 12px;
+  width: 100px;
+  height: auto;
+  border: solid #fff 0px;
+}
+
+
+.edit-profile,
+.edit-profile span {
+  color: #000;
+  font-size: 10px;
+  font-family: "Poppins SemiBold";
+  display: block;
+}
+
+.profile-icon {
+  background-color: #fff;
+}
+
+.profile-icon img {
+  // position: relative;
+  // top: 3px;
+}
+
+.profile {
+  border: 2px solid #eeeeee;
+  padding-bottom: 15px;
+  padding: 20px 10px 15px 10px;
+  margin-bottom: 25px;
+  color: #000;
+  font-weight: bold;
+}
+
+.left {
+  width: 32% !important;
+  float: left;
+  float: right !important;
+  font-size: 12px;
+  color: #000;
+  font-family: "Poppins SemiBold";
+  font-weight: 300;
+}
+
+.right {
+  display: block;
+  float: right !important;
+  font-size: 12px;
+  color: #000;
+  font-family: "Poppins Light";
+  font-weight: 300;
+  text-align: left;
+}
+
+.liner {
+  border-bottom: 1px solid #cecece;
+  padding: 20px 0px 20px 0px;
+
+}
+
+.verified {
+  background-color: #0D4134;
+  font-size: 12px;
+  color: #ffffff;
+  display: inline-block;
+  padding: 2px 15px;
+  font-family: 'Poppins Light';
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 14px;
+  font-family: 'Poppins Bold';
+  font-style: 'Bold';
+  color: var(--ion-color-primary);
+}
+
+.profile {
+  width: 100%;
+}
+.last-login {
+  font-size: 10px;
+  margin-right: 5px;
+  color: #000;
+  font-weight: bold;
+  font-family: 'Poppins Regular';
+  font-size: 12px !important;
+}
+
+ion-button {
+  height: 50px;
+  font-family: 'Poppins Bold';
+}
+
+ion-icon {
+  position: relative;
+  top: 3px;
+  font-size: 15px;
+}
+
+.profile-card {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-bottom: 15px;
+}
+
+.profile-card .card-content-md {
+  -webkit-padding-start: 0px;
+  padding-inline-start: 0px;
+  -webkit-padding-end: 0px;
+  padding-inline-end: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.profile-card ion-grid {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+ion-col {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.ion-border {
+  border-bottom: 2px solid #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ion-border-last {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h4 {
+  color: #000;
+  font-size: 15px;
+  font-family: 'Poppins Bold';
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: block;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+.camera {
+  position: absolute;
+  left: -3px;
+}
+
+.business {
+  padding-left: 5px;
+  padding-right: 5px
+}
+
+.viewBtn {
+  color: #21C1C1;
+}
+
+
+
+@media screen and (min-width : 768px) and (max-width: 1024px) {
+
+	ion-col {
+		text-align: left !important;
+	}
+}

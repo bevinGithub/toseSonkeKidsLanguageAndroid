@@ -1,0 +1,25 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">SETTINGS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button  expand="block" fill="solid" shape="round" color="primary" class="maroonBtn" routerLink="/reset-password/{{userId}}">Reset Password</ion-button>
+
+  <ion-button  expand="block" fill="solid" shape="round" color="primary" class="maroonBtn" routerLink="/terms-logged">Terms & Conditions</ion-button>
+
+  <ion-button  expand="block" fill="solid" shape="round" color="primary" class="maroonBtn" routerLink="/policy-logged">Privacy Policy</ion-button>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

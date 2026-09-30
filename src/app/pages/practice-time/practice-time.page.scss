@@ -1,0 +1,189 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ion-toolbar {
+  width: 100%;
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: 'Poppins Regular';
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h5 {
+  font-size: 18px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #A85A46;
+}
+
+h6 {
+  font-size: 16px;
+  font-family: 'Poppins SemiBold';
+  display: block;
+  color: #0D4134;
+}
+
+.listenText {
+    font-size: 14px;
+    color: #040505;
+    font-family: 'Poppins Regular';
+}
+
+.text {
+    font-size: 10px;
+    color: #21C1C1;
+    font-family: 'Poppins Regular';
+}
+
+.question {
+  font-size: 13px;
+  color: #040505 !important;
+  font-family: 'Poppins SemiBold';
+  display: block;
+}
+
+ion-checkbox, ion-radio {
+  font-size: 14px;
+  font-family: 'Poppins Regular';
+}
+
+ion-icon {
+  float: right;
+}
+
+ion-icon.red-app {
+  color: #F4647C !important;
+}
+
+ion-icon.yellow-app {
+  color: #F7C66F !important;
+}
+
+ion-icon.light-brown-app {
+  color: #D4CAC2 !important
+}
+
+ion-icon.light-green-app {
+  color: #59A5A5 !important
+}
+
+ion-icon.dark-green-app {
+  color: #0D4134 !important
+}
+
+ion-icon.brown-app {
+  color: #AF8648 !important
+}
+
+ion-icon.maroon-app {
+  color: #6D1330 !important
+}
+
+.correct {
+  color: #ffffff !important;
+}
+
+.wrong {
+  color: #ffffff !important;
+}
+
+ion-radio {
+  --border-radius: 4px;
+  --inner-border-radius: 4px;
+  --color: #ddd;
+  --color-checked: #59A5A5;
+}
+
+ion-radio.ios::part(container) {
+  width: 20px;
+  height: 20px;
+
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.radio-checked.ios::part(container) {
+  border-color: #59A5A5;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: 'Poppins Regular';
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-card  ion-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.correct_1 {
+  color: #2dd36f !important;
+}
+.correct_2 {
+  color: #2dd36f !important;
+}
+.correct_3 {
+  color: #2dd36f !important;
+}
+
+.correct_4 {
+  color: #2dd36f !important;
+}
+.correct_5 {
+  color: #2dd36f !important;
+}
+.correct_6 {
+  color: #2dd36f !important;
+}
+.correct_7 {
+  color: #2dd36f !important;
+}
+.correct_8 {
+  color: #2dd36f !important;
+}
+
+
+
+
+.wrong_1,.wrong_2,.wrong_3,.wrong_4,.wrong_5,.wrong_6 {
+  color: #eb445a !important;
+}
+
+.questionContainer {
+    border: 2px solid #eee;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.audio-img {
+    width: 25px;
+    height: 25px;
+}

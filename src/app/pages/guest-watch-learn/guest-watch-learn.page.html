@@ -1,0 +1,42 @@
+<ion-header class="headerBg ion-no-border">
+  <ion-toolbar color="warning1" class="ion-text-center">
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title
+      class="ion-text-center title-text"
+      [innerHTML]=" unit?.unit_title"
+    ></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="watchLearn ion-text-center">
+    <h5 color="medium">Watch and Learn</h5>
+  </div>
+
+  <div class="wordsList">
+    <ng-container *ngIf="watchLessons">
+      <ion-card>
+          <div class="iFrame" *ngIf="videoPath">
+          <iframe width="100%" height="320" [src]="videoPath" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </ion-card>
+    </ng-container>
+  </div>
+
+
+    <div class="ion-padding"></div>
+    <div class="pronunciation">
+      <ion-card class="ion-padding ion-text-center" routerLink="/guest-sing-learn/{{unit?.id}}">
+        Next <ion-icon size="large" name="arrow-forward-circle" class="{{iconColor}}-app"></ion-icon>
+      </ion-card>
+    </div>
+
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer class="ion-no-border ion-padding">
+  <app-guest-footer> </app-guest-footer>
+</ion-footer>

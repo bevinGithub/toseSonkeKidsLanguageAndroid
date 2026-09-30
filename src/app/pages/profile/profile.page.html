@@ -1,0 +1,105 @@
+<ion-header class="headerBg ion-no-border">
+
+  <ion-toolbar color="warning1">
+
+    <ion-buttons slot="start" class="menu-btn">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center title-text">PROFILE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid style="border: 2px solid #eeeeee; border-radius: 6px;">
+    <ion-row class="ion-border1 ion-no-padding">
+      <ion-col size="4" class="profile-icon ion-text-center ion-no-padding"  routerLink="/update-profile-photo/{{user?.id}}">
+        <img class="profilePhoto" *ngIf="user?.profile_photo === '' || user?.profile_photo === null"  src="assets/img/avatars/avatar-1.svg" alt="updatedData Profile">
+        <img class="profilePhoto" *ngIf="user?.profile_photo !== '' || user?.profile_photo !== null"  src="assets/img/avatars/{{user?.profile_photo}}" alt="">
+      </ion-col>
+      <ion-col size="8" class="desc" style="padding-left: 5px;">
+          <span class="title">{{ user?.name }} {{ user?.surname }} <span class="verified">verified</span></span>
+          <span class="edit-profile" *ngIf="user?.last_login">Last Login: {{ user?.last_login | timeago }}</span>
+          <span class="edit-profile" routerLink="/edit-user/{{ user?.id }}"><ion-icon  color="primary" name="create-outline"></ion-icon> Edit Profile</span>
+          <span class="edit-profile" routerLink="/reset-password/{{ user?.id }}"><ion-icon color="primary" name="lock-closed-outline"></ion-icon> Reset Password</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid class="business" style="border: 2px solid #eeeeee; margin-top: 15px; border-radius: 6px">
+    <ion-row class="ion-border-none">
+      <ion-col size="12">
+        <h4>User Details</h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-border">
+      <ion-col size="5" class="left">
+        Name
+      </ion-col>
+      <ion-col size="7" class="right">
+        {{ user?.name }} {{ user?.surname }}
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-border">
+      <ion-col size="5" class="left">
+        Email
+      </ion-col>
+      <ion-col size="7" class="right">
+        {{ user?.email }}
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-border-last">
+      <ion-col size="5" class="left">
+        Phone Number
+      </ion-col>
+      <ion-col size="7" class="right">
+        {{ user?.mobile_number }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="business" style="border: 2px solid #eeeeee; margin-top: 15px; margin-bottom: 15px; border-radius: 6px">
+    <ion-row class="ion-border-none">
+      <ion-col size="12">
+        <h4>Subscription Details</h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-border"  *ngIf="user?.subscriptionActive !== 'Active'">
+      <ion-col size="5" class="left">
+        Subscription Plan
+      </ion-col>
+      <ion-col size="7" class="right">
+        {{user?.subscriptionActive}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-border"  *ngIf="user?.subscriptionActive === 'Active'">
+      <ion-col size="5" class="left">
+        Subscription Plan
+      </ion-col>
+      <ion-col size="7" class="right">
+        {{user?.plan_type}}
+      </ion-col>
+    </ion-row>
+
+    <!-- //*ngIf="updatedData?.subscriptionActive === 'Active'" -->
+    <ion-row class="ion-border-last" >
+      <ion-col size="12" class="left">
+          <span class="viewBtn" routerLink="/subscription-details">
+            View Subscription Details
+          </span>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-footer></app-footer>
+</ion-footer>

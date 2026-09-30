@@ -1,0 +1,43 @@
+.headerBg {
+  height: 88px;
+  background: url('../../../assets/img/toolbar.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+ion-toolbar {
+  font-family: 'Poppins SemiBold';
+}
+
+.title-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+ion-card {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-family: 'Poppins Regular';
+  box-shadow: none !important;
+  border: 2px solid #eee;
+  border-radius: 6px;
+}
+
+.icon-image {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.language {
+  position: absolute;
+  top: 30px;
+  color: #313131;
+}
+
+.brownText {
+  font-size: 15px;
+  font-family: 'Poppins Regular';
+  color: #A85A46;
+}
